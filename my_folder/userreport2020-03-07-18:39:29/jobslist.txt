@@ -1,0 +1,10 @@
+Registry Slice: jobs (5 objects)
+--------------
+    fqid |    status |      name | subjobs |    application |        backend |                             backend.actualCE |                       comment |  subjob status 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    6108 | completed |           |         |     Executable |      Localhost |                                        rajat |                               |        0/0/0/0 
+    6109 | completed |           |         |     Executable |      Localhost |                                        rajat |                               |        0/0/0/0 
+    6110 | completed |           |         |     Executable |      Localhost |                                        rajat |                               |        0/0/0/0 
+    6111 | completed |           |         |     Executable |      Localhost |                                        rajat |                               |        0/0/0/0 
+    6112 | completed |           |         |     Executable |      Localhost |                                        rajat |                               |        0/0/0/0 
+

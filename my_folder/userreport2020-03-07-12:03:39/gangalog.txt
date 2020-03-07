@@ -1,0 +1,17 @@
+2020-03-07 12:03:22,326 MainThread Config              ::read_ini_files      :844 INFO    : reading config file /home/rajat/.gangarc
+2020-03-07 12:03:30,389 MainThread Job                 ::submit              :1490 INFO    : submitting job 6112
+2020-03-07 12:03:30,391 MainThread Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "submitting"
+2020-03-07 12:03:30,392 MainThread Executable          ::prepare             :108 INFO    : Preparing Executable application.
+2020-03-07 12:03:34,340 MainThread Executable          ::prepare             :110 INFO    : Created shared directory: conf-6532dc28-65b8-4e66-adeb-637171d9e0cc
+2020-03-07 12:03:34,577 MainThread Job                 ::_getJobSubConfig    :1258 INFO    : Preparing subjobs
+2020-03-07 12:03:34,854 MainThread IBackend            ::master_submit       :190 INFO    : submitting job 6112 to Local backend
+2020-03-07 12:03:34,957 MainThread Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "submitted"
+2020-03-07 12:03:39,759 Ganga_Worker_0 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "running"
+2020-03-07 12:03:39,759 Ganga_Worker_4 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "running"
+2020-03-07 12:03:39,784 Ganga_Worker_4 Job                 ::postprocess_hook    :814 INFO    : Job 6112 Running PostProcessor hook
+2020-03-07 12:03:39,786 Ganga_Worker_4 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "completed"
+2020-03-07 12:03:39,784 Ganga_Worker_0 Job                 ::postprocess_hook    :814 INFO    : Job 6112 Running PostProcessor hook
+2020-03-07 12:03:39,790 Ganga_Worker_0 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "completed"
+2020-03-07 12:03:39,790 Ganga_Worker_0 Localhost           ::remove_workdir      :293 INFO    : removing: /tmp/tmp74_4srco
+2020-03-07 12:03:39,788 Ganga_Worker_4 Localhost           ::remove_workdir      :293 INFO    : removing: /tmp/tmp74_4srco
+2020-03-07 12:03:39,792 Ganga_Worker_4 Localhost           ::remove_workdir      :296 WARNING : problem removing the workdir 17817: [Errno 2] No such file or directory: '/tmp/tmp74_4srco'

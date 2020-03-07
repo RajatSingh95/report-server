@@ -1,0 +1,29 @@
+2020-03-07 12:03:22,326 MainThread Config              ::read_ini_files      :844 INFO    : reading config file /home/rajat/.gangarc
+2020-03-07 12:03:30,389 MainThread Job                 ::submit              :1490 INFO    : submitting job 6112
+2020-03-07 12:03:30,391 MainThread Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "submitting"
+2020-03-07 12:03:30,392 MainThread Executable          ::prepare             :108 INFO    : Preparing Executable application.
+2020-03-07 12:03:34,340 MainThread Executable          ::prepare             :110 INFO    : Created shared directory: conf-6532dc28-65b8-4e66-adeb-637171d9e0cc
+2020-03-07 12:03:34,577 MainThread Job                 ::_getJobSubConfig    :1258 INFO    : Preparing subjobs
+2020-03-07 12:03:34,854 MainThread IBackend            ::master_submit       :190 INFO    : submitting job 6112 to Local backend
+2020-03-07 12:03:34,957 MainThread Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "submitted"
+2020-03-07 12:03:39,759 Ganga_Worker_0 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "running"
+2020-03-07 12:03:39,759 Ganga_Worker_4 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "running"
+2020-03-07 12:03:39,784 Ganga_Worker_4 Job                 ::postprocess_hook    :814 INFO    : Job 6112 Running PostProcessor hook
+2020-03-07 12:03:39,786 Ganga_Worker_4 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "completed"
+2020-03-07 12:03:39,784 Ganga_Worker_0 Job                 ::postprocess_hook    :814 INFO    : Job 6112 Running PostProcessor hook
+2020-03-07 12:03:39,790 Ganga_Worker_0 Job                 ::updateStatus        :615 INFO    : job 6112 status changed to "completed"
+2020-03-07 12:03:39,790 Ganga_Worker_0 Localhost           ::remove_workdir      :293 INFO    : removing: /tmp/tmp74_4srco
+2020-03-07 12:03:39,788 Ganga_Worker_4 Localhost           ::remove_workdir      :293 INFO    : removing: /tmp/tmp74_4srco
+2020-03-07 12:03:39,792 Ganga_Worker_4 Localhost           ::remove_workdir      :296 WARNING : problem removing the workdir 17817: [Errno 2] No such file or directory: '/tmp/tmp74_4srco'
+2020-03-07 12:03:41,405 MainThread feedback_report     ::send_post           :115 INFO    : Your error report was uploaded to ganga developers with the following URL. 
+2020-03-07 12:03:41,407 MainThread feedback_report     ::send_post           :117 INFO    : You may include this URL and the following summary information in your bug report or in the support email to the developers.
+2020-03-07 12:03:41,407 MainThread feedback_report     ::send_post           :118 INFO    : 
+2020-03-07 12:03:41,407 MainThread feedback_report     ::send_post           :119 INFO    : ***http://127.0.0.0:8000/server***
+2020-03-07 12:03:41,407 MainThread feedback_report     ::send_post           :120 INFO    : 
+2020-03-07 12:03:41,407 MainThread feedback_report     ::send_post           :122 INFO    : Ganga Version : 8.2.1
+2020-03-07 12:03:41,408 MainThread feedback_report     ::send_post           :124 INFO    : Python Version : 3.6.9
+2020-03-07 12:03:41,408 MainThread feedback_report     ::send_post           :125 INFO    : Operation System Version : Linux-5.3.0-40-generic-x86_64-with-Ubuntu-18.04-bionic
+2020-03-07 12:03:41,408 MainThread feedback_report     ::send_post           :128 INFO    : Application Name : Executable
+2020-03-07 12:03:41,408 MainThread feedback_report     ::send_post           :129 INFO    : Backend Name : Local
+2020-03-07 12:03:41,409 MainThread feedback_report     ::send_post           :131 INFO    : Python Path : /home/rajat/ganga/bin/ganga:/home/external/google-api-python-client/1.1/noarch/python:/home/external/python-gflags/2.0/noarch/python:/home/external/httplib2/0.8/noarch/python:/home/external/ipython/1.2.1/noarch/lib/python
+2020-03-07 12:03:41,416 MainThread feedback_report     ::send_post           :132 INFO    : 

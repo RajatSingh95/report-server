@@ -1,0 +1,150 @@
+<root>
+ <class name="Job" version="1.6" category="jobs">
+    <attribute name="outputsandbox"> 
+       <sequence>
+       </sequence>
+    </attribute>
+    <attribute name="comment"> 
+        <value>''</value>
+    </attribute>
+    <attribute name="id"> 
+        <value>6112</value>
+    </attribute>
+    <attribute name="status"> 
+        <value>'new'</value>
+    </attribute>
+    <attribute name="name"> 
+        <value>''</value>
+    </attribute>
+    <attribute name="do_auto_resubmit"> 
+        <value>False</value>
+    </attribute>
+    <attribute name="inputsandbox">
+       <sequence>
+       </sequence>
+    </attribute>
+    <attribute name="info">
+          <class name="JobInfo" version="0.1" category="jobinfos">
+             <attribute name="submit_counter"> 
+                 <value>0</value>
+             </attribute>
+             <attribute name="uuid"> 
+                 <value>''</value>
+             </attribute>
+             <attribute name="monitoring_links"> 
+                <sequence>
+                </sequence>
+             </attribute>
+             <attribute name="monitor">
+                <value>None</value>
+             </attribute>
+          </class>
+    </attribute>
+    <attribute name="time">
+          <class name="JobTime" version="0.0" category="jobtime">
+             <attribute name="timestamps"> 
+                 <value>{'new': datetime.datetime(2020, 3, 7, 6, 33, 28, 663037)}</value>
+             </attribute>
+          </class>
+    </attribute>
+    <attribute name="application">
+          <class name="Executable" version="2.0" category="applications">
+             <attribute name="exe"> 
+                 <value>'echo'</value>
+             </attribute>
+             <attribute name="args"> 
+                <sequence>
+                   <value>'Hello World'</value>
+                </sequence>
+             </attribute>
+             <attribute name="env"> 
+                 <value>{}</value>
+             </attribute>
+             <attribute name="platform"> 
+                 <value>'ANY'</value>
+             </attribute>
+             <attribute name="is_prepared"> 
+                 <value>None</value>
+             </attribute>
+             <attribute name="hash"> 
+                 <value>None</value>
+             </attribute>
+          </class>
+    </attribute>
+    <attribute name="backend">
+          <class name="Local" version="1.2" category="backends">
+             <attribute name="id"> 
+                 <value>-1</value>
+             </attribute>
+             <attribute name="status"> 
+                 <value>None</value>
+             </attribute>
+             <attribute name="exitcode"> 
+                 <value>None</value>
+             </attribute>
+             <attribute name="workdir"> 
+                 <value>''</value>
+             </attribute>
+             <attribute name="actualCE"> 
+                 <value>''</value>
+             </attribute>
+             <attribute name="wrapper_pid"> 
+                 <value>-1</value>
+             </attribute>
+             <attribute name="nice"> 
+                 <value>0</value>
+             </attribute>
+             <attribute name="force_parallel"> 
+                 <value>False</value>
+             </attribute>
+          </class>
+    </attribute>
+    <attribute name="inputfiles">
+       <sequence>
+       </sequence>
+    </attribute>
+    <attribute name="outputfiles">
+       <sequence>
+       </sequence>
+    </attribute>
+    <attribute name="non_copyable_outputfiles">
+       <sequence>
+       </sequence>
+    </attribute>
+    <attribute name="inputdata">
+       <value>None</value>
+    </attribute>
+    <attribute name="outputdata">
+       <value>None</value>
+    </attribute>
+    <attribute name="splitter">
+       <value>None</value>
+    </attribute>
+    <attribute name="subjobs">
+       <sequence>
+       </sequence>
+    </attribute>
+    <attribute name="postprocessors">
+          <class name="MultiPostProcessor" version="1.0" category="postprocessor">
+             <attribute name="process_objects">
+                <sequence>
+                </sequence>
+             </attribute>
+          </class>
+    </attribute>
+    <attribute name="virtualization">
+       <value>None</value>
+    </attribute>
+    <attribute name="merger">
+       <value>None</value>
+    </attribute>
+    <attribute name="metadata">
+          <class name="MetadataDict" version="1.0" category="metadata">
+             <attribute name="data"> 
+                 <value>{}</value>
+             </attribute>
+          </class>
+    </attribute>
+ </class>
+</root>
+

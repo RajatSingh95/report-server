@@ -1,0 +1,36 @@
+2020-03-07 01:05:23,064 MainThread Config              ::read_ini_files      :844 INFO    : reading config file /home/rajat/.gangarc
+2020-03-07 01:05:27,714 MainThread Job                 ::submit              :1490 INFO    : submitting job 6111
+2020-03-07 01:05:27,717 MainThread Job                 ::updateStatus        :615 INFO    : job 6111 status changed to "submitting"
+2020-03-07 01:05:27,718 MainThread Executable          ::prepare             :108 INFO    : Preparing Executable application.
+2020-03-07 01:05:27,719 MainThread Executable          ::prepare             :110 INFO    : Created shared directory: conf-cdfd25ae-2952-4b9a-8d07-814061516b23
+2020-03-07 01:05:27,779 MainThread Job                 ::_getJobSubConfig    :1258 INFO    : Preparing subjobs
+2020-03-07 01:05:28,033 MainThread IBackend            ::master_submit       :190 INFO    : submitting job 6111 to Local backend
+2020-03-07 01:05:28,066 MainThread Job                 ::updateStatus        :615 INFO    : job 6111 status changed to "submitted"
+2020-03-07 01:05:29,815 Ganga_Worker_3 Job                 ::updateStatus        :615 INFO    : job 6111 status changed to "running"
+2020-03-07 01:05:29,816 Ganga_Worker_3 Job                 ::postprocess_hook    :814 INFO    : Job 6111 Running PostProcessor hook
+2020-03-07 01:05:29,818 Ganga_Worker_3 Job                 ::updateStatus        :615 INFO    : job 6111 status changed to "completed"
+2020-03-07 01:05:29,818 Ganga_Worker_3 Localhost           ::remove_workdir      :293 INFO    : removing: /tmp/tmp1k4uzgag
+2020-03-07 01:05:30,451 MainThread feedback_report     ::send_post           :177 INFO    : Your error report was uploaded to ganga developers with the following URL. 
+2020-03-07 01:05:30,452 MainThread feedback_report     ::send_post           :179 INFO    : You may include this URL and the following summary information in your bug report or in the support email to the developers.
+2020-03-07 01:05:30,452 MainThread feedback_report     ::send_post           :180 INFO    : 
+2020-03-07 01:05:30,452 MainThread feedback_report     ::send_post           :181 INFO    : ***http://127.0.0.0:8000/server***
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :182 INFO    : 
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :184 INFO    : Ganga Version : 8.2.1
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :186 INFO    : Python Version : 3.6.9
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :187 INFO    : Operation System Version : Linux-5.3.0-40-generic-x86_64-with-Ubuntu-18.04-bionic
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :190 INFO    : Application Name : Executable
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :191 INFO    : Backend Name : Local
+2020-03-07 01:05:30,453 MainThread feedback_report     ::send_post           :193 INFO    : Python Path : /home/rajat/ganga/bin/ganga:/home/external/google-api-python-client/1.1/noarch/python:/home/external/python-gflags/2.0/noarch/python:/home/external/httplib2/0.8/noarch/python:/home/external/ipython/1.2.1/noarch/lib/python
+2020-03-07 01:05:30,454 MainThread feedback_report     ::send_post           :194 INFO    : 
+2020-03-07 01:06:17,857 MainThread feedback_report     ::send_post           :177 INFO    : Your error report was uploaded to ganga developers with the following URL. 
+2020-03-07 01:06:17,857 MainThread feedback_report     ::send_post           :179 INFO    : You may include this URL and the following summary information in your bug report or in the support email to the developers.
+2020-03-07 01:06:17,857 MainThread feedback_report     ::send_post           :180 INFO    : 
+2020-03-07 01:06:17,858 MainThread feedback_report     ::send_post           :181 INFO    : ***http://127.0.0.0:8000/server***
+2020-03-07 01:06:17,858 MainThread feedback_report     ::send_post           :182 INFO    : 
+2020-03-07 01:06:17,858 MainThread feedback_report     ::send_post           :184 INFO    : Ganga Version : 8.2.1
+2020-03-07 01:06:17,858 MainThread feedback_report     ::send_post           :186 INFO    : Python Version : 3.6.9
+2020-03-07 01:06:17,859 MainThread feedback_report     ::send_post           :187 INFO    : Operation System Version : Linux-5.3.0-40-generic-x86_64-with-Ubuntu-18.04-bionic
+2020-03-07 01:06:17,859 MainThread feedback_report     ::send_post           :190 INFO    : Application Name : Executable
+2020-03-07 01:06:17,859 MainThread feedback_report     ::send_post           :191 INFO    : Backend Name : Local
+2020-03-07 01:06:17,859 MainThread feedback_report     ::send_post           :193 INFO    : Python Path : /home/rajat/ganga/bin/ganga:/home/external/google-api-python-client/1.1/noarch/python:/home/external/python-gflags/2.0/noarch/python:/home/external/httplib2/0.8/noarch/python:/home/external/ipython/1.2.1/noarch/lib/python
+2020-03-07 01:06:17,859 MainThread feedback_report     ::send_post           :194 INFO    : 

@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<title>Current Ganga Threads</title>
+</head><body><h1>Current Ganga Threads</h1>
+<h2>IPythonHistorySavingThread</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;&lt;/home/rajat/.local/lib/python3.6/site-packages/decorator.py:decorator-gen-24&gt;&quot;</span>, line <span style="color: #666666">2</span>, in run
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/IPython/core/history.py&quot;</span>, line <span style="color: #666666">58</span>, in needs_sqlite
+    <span style="color: #008000; font-weight: bold">return</span> f(<span style="color: #008000">self</span>, <span style="color: #666666">*</span>a, <span style="color: #666666">**</span>kw)
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/IPython/core/history.py&quot;</span>, line <span style="color: #666666">829</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>history_manager<span style="color: #666666">.</span>save_flag<span style="color: #666666">.</span>wait()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">551</span>, in wait
+    signaled <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>_cond<span style="color: #666666">.</span>wait(timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">295</span>, in wait
+    waiter<span style="color: #666666">.</span>acquire()
+</pre></div>
+
+<h2>GANGA_Update_Thread_JobRegistry_Monitor</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">613</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>__mainLoopCond<span style="color: #666666">.</span>wait(<span style="color: #008000">self</span><span style="color: #666666">.</span>uPollRate <span style="color: #666666">*</span> <span style="color: #666666">0.05</span>)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>GANGA_Update_Thread_TaskRegistryFlusher</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaRepository/Registry.py&quot;</span>, line <span style="color: #666666">265</span>, in run
+    time<span style="color: #666666">.</span>sleep(<span style="color: #666666">1/</span>sleeps_per_second)
+</pre></div>
+
+<h2>GANGA_Update_Thread_GangaTasks</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/GPIDev/Lib/Tasks/TaskRegistry.py&quot;</span>, line <span style="color: #666666">114</span>, in _thread_main
+    time<span style="color: #666666">.</span>sleep(<span style="color: #666666">0.01</span>)
+</pre></div>
+
+<h2>GANGA_Update_Thread_JobRegistryFlusher</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaRepository/Registry.py&quot;</span>, line <span style="color: #666666">265</span>, in run
+    time<span style="color: #666666">.</span>sleep(<span style="color: #666666">1/</span>sleeps_per_second)
+</pre></div>
+
+<h2>GANGA_Update_Thread_JobRegistryFlusher</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaRepository/Registry.py&quot;</span>, line <span style="color: #666666">265</span>, in run
+    time<span style="color: #666666">.</span>sleep(<span style="color: #666666">1/</span>sleeps_per_second)
+</pre></div>
+
+<h2>GANGA_Update_Thread_SessionLockRefresher</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaRepository/SessionLock.py&quot;</span>, line <span style="color: #666666">126</span>, in run
+    time<span style="color: #666666">.</span>sleep(<span style="color: #666666">0.05</span> <span style="color: #666666">+</span> random<span style="color: #666666">.</span>random() <span style="color: #666666">*</span> <span style="color: #666666">0.05</span>)
+</pre></div>
+
+<h2>Thread-1</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Utility/stacktracer.py&quot;</span>, line <span style="color: #666666">94</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>stacktraces()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Utility/stacktracer.py&quot;</span>, line <span style="color: #666666">107</span>, in stacktraces
+    fout<span style="color: #666666">.</span>write(stacktraces())
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Utility/stacktracer.py&quot;</span>, line <span style="color: #666666">55</span>, in stacktraces
+    trace <span style="color: #666666">=</span> traceback<span style="color: #666666">.</span>format_stack(stack)
+</pre></div>
+
+<h2>Ganga_Worker_4</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>Ganga_Worker_3</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>Ganga_Worker_2</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>Ganga_Worker_1</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>Ganga_Worker_0</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>User_Worker_4</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>User_Worker_3</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>User_Worker_2</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>User_Worker_1</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>User_Worker_0</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">864</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_target(<span style="color: #666666">*</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_args, <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_kwargs)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/GangaThread/WorkerThreads/WorkerThreadPool.py&quot;</span>, line <span style="color: #666666">88</span>, in __worker_thread
+    item <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>__queue<span style="color: #666666">.</span>get(<span style="color: #008000; font-weight: bold">True</span>,timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>GANGA_Update_Thread_MonitoringWorker_4_1583562803054</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">106</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_execUpdateAction()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">122</span>, in _execUpdateAction
+    action <span style="color: #666666">=</span> Qin<span style="color: #666666">.</span>get(block<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, timeout<span style="color: #666666">=0.5</span>)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>GANGA_Update_Thread_MonitoringWorker_3_1583562803054</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">106</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_execUpdateAction()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">122</span>, in _execUpdateAction
+    action <span style="color: #666666">=</span> Qin<span style="color: #666666">.</span>get(block<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, timeout<span style="color: #666666">=0.5</span>)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>GANGA_Update_Thread_MonitoringWorker_2_1583562803054</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">106</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_execUpdateAction()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">122</span>, in _execUpdateAction
+    action <span style="color: #666666">=</span> Qin<span style="color: #666666">.</span>get(block<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, timeout<span style="color: #666666">=0.5</span>)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>GANGA_Update_Thread_MonitoringWorker_1_1583562803054</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">106</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_execUpdateAction()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">122</span>, in _execUpdateAction
+    action <span style="color: #666666">=</span> Qin<span style="color: #666666">.</span>get(block<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, timeout<span style="color: #666666">=0.5</span>)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>GANGA_Update_Thread_MonitoringWorker_0_1583562803049</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">884</span>, in _bootstrap
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_bootstrap_inner()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">916</span>, in _bootstrap_inner
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">106</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_execUpdateAction()
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Core/MonitoringComponent/Local_GangaMC_Service.py&quot;</span>, line <span style="color: #666666">122</span>, in _execUpdateAction
+    action <span style="color: #666666">=</span> Qin<span style="color: #666666">.</span>get(block<span style="color: #666666">=</span><span style="color: #008000; font-weight: bold">True</span>, timeout<span style="color: #666666">=0.5</span>)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/queue.py&quot;</span>, line <span style="color: #666666">173</span>, in get
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>not_empty<span style="color: #666666">.</span>wait(remaining)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/threading.py&quot;</span>, line <span style="color: #666666">299</span>, in wait
+    gotit <span style="color: #666666">=</span> waiter<span style="color: #666666">.</span>acquire(<span style="color: #008000; font-weight: bold">True</span>, timeout)
+</pre></div>
+
+<h2>MainThread</h2>
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>  File <span style="color: #008000">&quot;ganga&quot;</span>, line <span style="color: #666666">92</span>, in &lt;module&gt;
+    GangaCore<span style="color: #666666">.</span>Runtime<span style="color: #666666">.</span>_prog<span style="color: #666666">.</span>run(GPI<span style="color: #666666">.</span><span style="color: #19177C">__dict__</span>)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Runtime/bootstrap.py&quot;</span>, line <span style="color: #666666">1129</span>, in run
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>launch_IPython(local_ns, GangaProgram<span style="color: #666666">.</span>_ganga_error_handler, <span style="color: #008000">self</span><span style="color: #666666">.</span>ganga_prompt)
+  File <span style="color: #008000">&quot;/home/rajat/ganga/ganga/GangaCore/Runtime/bootstrap.py&quot;</span>, line <span style="color: #666666">1257</span>, in launch_IPython
+    ipshell(local_ns<span style="color: #666666">=</span>local_ns, module<span style="color: #666666">=</span>GangaCore<span style="color: #666666">.</span>GPI)
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/IPython/terminal/embed.py&quot;</span>, line <span style="color: #666666">229</span>, in __call__
+    global_ns<span style="color: #666666">=</span>global_ns, compile_flags<span style="color: #666666">=</span>compile_flags)
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/IPython/terminal/embed.py&quot;</span>, line <span style="color: #666666">324</span>, in mainloop
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>interact()
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/IPython/terminal/interactiveshell.py&quot;</span>, line <span style="color: #666666">541</span>, in interact
+    code <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>prompt_for_code()
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/IPython/terminal/interactiveshell.py&quot;</span>, line <span style="color: #666666">469</span>, in prompt_for_code
+    <span style="color: #666666">**</span><span style="color: #008000">self</span><span style="color: #666666">.</span>_extra_prompt_options())
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/prompt_toolkit/shortcuts/prompt.py&quot;</span>, line <span style="color: #666666">997</span>, in prompt
+    <span style="color: #008000; font-weight: bold">return</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>app<span style="color: #666666">.</span>run()
+  File <span style="color: #008000">&quot;/home/rajat/.local/lib/python3.6/site-packages/prompt_toolkit/application/application.py&quot;</span>, line <span style="color: #666666">810</span>, in run
+    <span style="color: #008000; font-weight: bold">return</span> loop<span style="color: #666666">.</span>run_until_complete(<span style="color: #008000">self</span><span style="color: #666666">.</span>run_async(pre_run<span style="color: #666666">=</span>pre_run))
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/asyncio/base_events.py&quot;</span>, line <span style="color: #666666">471</span>, in run_until_complete
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>run_forever()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/asyncio/base_events.py&quot;</span>, line <span style="color: #666666">438</span>, in run_forever
+    <span style="color: #008000">self</span><span style="color: #666666">.</span>_run_once()
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/asyncio/base_events.py&quot;</span>, line <span style="color: #666666">1415</span>, in _run_once
+    event_list <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>_selector<span style="color: #666666">.</span>select(timeout)
+  File <span style="color: #008000">&quot;/usr/lib/python3.6/selectors.py&quot;</span>, line <span style="color: #666666">445</span>, in select
+    fd_event_list <span style="color: #666666">=</span> <span style="color: #008000">self</span><span style="color: #666666">.</span>_epoll<span style="color: #666666">.</span>poll(timeout, max_ev)
+</pre></div>
+
+<small>2020-03-07T13:09:28.486914</small>
+</body>
+</html>

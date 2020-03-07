@@ -1,0 +1,2162 @@
+#GANGA_VERSION = 8.2.1
+Logging : control the messages printed by Ganga
+The settings are applied hierarchically to the loggers. Ganga is the name of the top-level logger which
+applies by default to all GangaCore.* packages unless overriden in sub-packages.
+You may define new loggers in this section.
+The log level may be one of: CRITICAL ERROR WARNING INFO DEBUG
+
+      Ganga = 'INFO'
+          top-level logger
+          Type: <class 'str'>
+      GangaCore.GPIDev = 'INFO'
+          logger of GangaCore.GPIDev.* packages
+          Type: <class 'str'>
+      GangaCore.Runtime.bootstrap = 'INFO'
+          FIXME
+          Type: <class 'str'>
+      GangaCore.Utility.logging = 'WARNING'
+          logger of the Ganga logging package itself (use with care!)
+          Type: <class 'str'>
+      _colour = True
+          enable ASCII colour formatting of messages e.g. errors in red
+          Type: <class 'bool'>
+      _customFormat = ''
+          custom formatting string for Ganga logging  e.g. '%(name)-35s:
+          %(levelname)-8s %(message)s'
+          Type: <class 'str'>
+      _format = 'NORMAL'
+          format of logging messages: TERSE,NORMAL,VERBOSE,DEBUG
+          Type: <class 'str'>
+      _interactive_cache = True
+          if True then the cache used for interactive sessions, False disables
+          caching
+          Type: <class 'bool'>
+      _logfile = '~/log'
+          location of the logfile
+          Type: <class 'str'>
+      _logfile_size = 100000
+          the size of the logfile (in bytes), the rotating log will never exceed
+          this file size
+          Type: <class 'int'>
+
+System : parameters of this ganga session (read-only)
+      GANGA_CONFIG_FILE = '/home/rajat/gangarc'
+          current user config file used
+          Type: <class 'str'>
+*     GANGA_CONFIG_PATH = '/home/rajat/ganga/ganga/:'
+          site/group specific configuration files as specified by --config-path
+          or GANGA_CONFIG_PATH variable
+          Type: <class 'str'>
+      GANGA_HOSTNAME = 'rajat'
+          local hostname where ganga is running
+          Type: <class 'str'>
+      GANGA_PYTHONPATH = '/home/rajat/ganga/ganga'
+          location of the ganga core packages
+          Type: <class 'str'>
+      GANGA_VERSION = '1'
+
+          Type: <class 'str'>
+
+Configuration : global configuration parameters.
+this is a catch all section.
+      AutoStartReg = True
+          AutoStart the registries, needed to access any jobs in registry
+          therefore needs to be True for 99.999% of use cases
+          Type: <class 'bool'>
+      Batch = 'LSF'
+          default batch system
+          Type: <class 'str'>
+      Count_Calls = False
+          Run function call counters on Ganga Objects
+          Type: <class 'bool'>
+      DiskIOTimeout = 45
+          Time in seconds before a ganga session (lock file) is treated as a
+          zombie and removed
+          Type: <class 'int'>
+      IgnoreRuntimeWarnings = False
+          runtime warnings issued by the interpreter may be suppresed
+          Type: <class 'bool'>
+      LOAD_PATH = ''
+          the search path for the load() function
+          Type: <class 'str'>
+      NoAfsToken = False
+          Do not require an AFS token when running on an AFS filesystem. Not
+          recommended!
+          Type: <class 'bool'>
+      Profile_CPU = False
+          Run cpu profiler on Ganga Objects
+          Type: <class 'bool'>
+      Profile_Memory = False
+          Run memory profiler on Ganga Objects
+          Type: <class 'bool'>
+      RUNTIME_PATH = ''
+          path to runtime plugin packages where custom handlers may be added.
+          Normally you should not worry about it. If an element of the path is
+          just a name (like in the example below) then the plugins will be
+          loaded using current python path. This means that some packages such
+          as GangaTest may be taken from the release area.
+          Type: <class 'str'>
+          Examples:
+          RUNTIME_PATH = GangaGUI
+          RUNTIME_PATH = /my/SpecialExtensions:GangaTest
+      ReleaseNotes = True
+          Flag to print out the relevent subsection of release notes for each
+          experiment at start up
+          Type: <class 'bool'>
+      SCRIPTS_PATH = 'Ganga/scripts'
+          the search path to scripts directory. When running a script from the
+          system shell (e.g. ganga script) this path is used to search for
+          script
+          Type: <class 'str'>
+      SMTPHost = 'localhost'
+          The SMTP server for notification emails to be sent, default is
+          localhost
+          Type: <class 'str'>
+      ServerPort = 434343
+          Port for the Ganga server to listen on
+          Type: <class 'int'>
+      ServerTimeout = 60
+          Timeout in minutes for auto-server shutdown
+          Type: <class 'int'>
+      ServerUserScript = ''
+          Full path to user script to call periodically. The script will be
+          executed as if called within Ganga by 'execfile'.
+          Type: <class 'str'>
+      ServerUserScriptWaitTime = 300
+          Time in seconds between executions of the user script
+          Type: <class 'int'>
+      StartupGPI = ''
+          block of GPI commands executed at startup
+          Type: <class 'str'>
+      TextShell = 'IPython'
+          The type of the interactive shell: IPython (cooler) or Console
+          (limited)
+          Type: <class 'str'>
+      UDockerlocation = '~'
+          Directory where udocker will be installed for local jobs if used for
+          virtualization
+          Type: <class 'str'>
+      autoGenerateJobWorkspace = False
+          Autogenerate workspace dirs for new jobs
+          Type: <class 'bool'>
+      confirm_exit = True
+          Ask the user on exit if we should exit, (this is passed along to
+          IPython)
+          Type: <class 'bool'>
+      deleteUnusedShareDir = 'always'
+          If set to ask the user is presented with a prompt asking whether
+          Shared directories not associated with a persisted Ganga object should
+          be deleted upon Ganga exit. If set to never, shared directories will
+          not be deleted upon exit, even if they are not associated with a
+          persisted Ganga object. If set to always (the default), then shared
+          directories will always be deleted if not associated with a persisted
+          Ganga object.
+          Type: <class 'str'>
+      force_start = False
+          Ignore disk checking on startup
+          Type: <class 'bool'>
+      gangadir = '/home/rajat/gangadir'
+          Location of local job repositories and workspaces. Default is
+          ~/gangadir but in somecases (such as LSF CNAF) this needs to be
+          modified to point to the shared file system directory.
+          Type: <class 'str'>
+          Filter: The ~ and $VARS are automatically expanded. 
+      lockingStrategy = 'UNIX'
+          Type of locking strategy which can be used. UNIX or FIXED . default =
+          UNIX
+          Type: <class 'str'>
+      namedTemplates_ext = 'tpl'
+          The default file extension for the named template system. If a package
+          sets up their own by calling "establishNamedTemplates" from
+          python/Ganga/GPIDev/Lib/Job/NamedJobTemplate.py in their ini file then
+          they can override this without needing the config option
+          Type: <class 'str'>
+      namedTemplates_pickle = False
+          Determines if named template system stores templates in pickle file
+          format (True) or in the Ganga streamed object format (False). By
+          default streamed object format which is human readable is used. If a
+          package sets up their own by calling "establishNamedTemplates" from
+          python/Ganga/GPIDev/Lib/Job/NamedJobTemplate.py in their ini file then
+          they can override this without needing the config option
+          Type: <class 'bool'>
+      repositorytype = 'LocalXML'
+          Type of the repository.
+          Type: <class 'str'>
+          Examples:
+          LocalXML
+      resubmitOnlyFailedSubjobs = True
+          If TRUE (default), calling job.resubmit() will only resubmit FAILED
+          subjobs. Note that the auto_resubmit mechanism will only ever resubmit
+          FAILED subjobs.
+          Type: <class 'bool'>
+      used_versions_path = '~/cache/Ganga/'
+          Path to the directory to store the file listing the used ganga
+          versions
+          Type: <class 'str'>
+      user = 'rajat'
+          User name. The same person may have different roles (user names) and
+          still use the same gangadir. Unless explicitly set this option
+          defaults to the real user name.
+          Type: <class 'str'>
+      workspacetype = 'LocalFilesystem'
+          Type of workspace. Workspace is a place where input and output sandbox
+          of jobs are stored. Currently the only supported type is
+          LocalFilesystem.
+          Type: <class 'str'>
+
+TextShell_IPython : IPython shell configuration
+      colourscheme = 'LightBG'
+          Colour scheme to be used by iPython. Options are LightBG, Linux,
+          Neutral, NoColor
+          Type: <class 'str'>
+
+Shell : configuration parameters for internal Shell utility.
+
+Queues : configuration section for the queues
+      NumWorkerThreads = 5
+          default number of worker threads in the queues system
+          Type: <class 'int'>
+      ShutDownTimeout = 1
+          timeout before looping again over queue to give shutdown a chance
+          Type: <class 'float'>
+      Timeout = None
+          default timeout for queue generated processes
+          Type: <class 'NoneType'>
+
+Plugins : General control of plugin mechanism.
+Set the default plugin in a given category.
+For example:
+default_applications = DaVinci
+default_backends = LCG
+
+
+GPI_Semantics : Customization of GPI behaviour. These options may affect the semantics of the Ganga GPI interface (what may result in a different behaviour of scripts and commands).
+      job_submit_keep_going = False
+          Keep on submitting as many subjobs as possible. Option to j.submit(),
+          see Job class for details
+          Type: <class 'bool'>
+      job_submit_keep_on_fail = False
+          Do not revert job to new status even if submission failed. Option to
+          j.submit(), see Job class for details
+          Type: <class 'bool'>
+
+PollThread : background job status monitoring and output retrieval
+      Condor = 30
+          Poll rate for Condor backend.
+          Type: <class 'int'>
+      Dirac = 50
+          Poll rate for Dirac backend.
+          Type: <class 'int'>
+      DiskSpaceChecker = ''
+          disk space checking callback. This function should return False when
+          there is no disk space available, True otherwise
+          Type: <class 'str'>
+      HeartBeatTimeOut = 9223372036854775807
+          Time before the user gets the warning that a thread has locked up due
+          to failing to update the heartbeat attribute
+          Type: <class 'int'>
+      LCG = 30
+          Poll rate for LCG backend.
+          Type: <class 'int'>
+      LSF = 20
+          Poll rate for LSF backend.
+          Type: <class 'int'>
+      Local = 10
+          Poll rate for Local backend.
+          Type: <class 'int'>
+      MaxFracForResubmit = 25
+          Maximum fraction of failed jobs before stopping automatic resubmission
+          Type: <class 'float'>
+      MaxNumResubmits = 5
+          Maximum number of automatic job resubmits to do before giving
+          Type: <class 'int'>
+      PBS = 20
+          Poll rate for PBS backend.
+          Type: <class 'int'>
+      Panda = 50
+          Poll rate for Panda backend.
+          Type: <class 'int'>
+      autoCheckCredentials = True
+          Check credentials using the monitoring loop
+          Type: <class 'bool'>
+      autoKillThreshold = 20
+          Maximum number of failed subjobs before a job is automatically killed
+          by the monitoring.
+          Type: <class 'int'>
+      autostart = True
+          enable monitoring automatically at startup, in script mode monitoring
+          is disabled by default, in interactive mode it is enabled
+          Type: <class 'bool'>
+      autostart_monThreads = True
+          enable populating of the monitoring worker threads
+          Type: <class 'bool'>
+      base_poll_rate = 2
+          internal supervising thread
+          Type: <class 'int'>
+      creds_poll_rate = 30
+          The frequency in seconds for credentials checker
+          Type: <class 'int'>
+      default_backend_poll_rate = 30
+          Default rate for polling job status in the thread pool. This is the
+          default value for all backends.
+          Type: <class 'int'>
+      diskspace_poll_rate = 30
+          The frequency in seconds for free disk checker
+          Type: <class 'int'>
+      enable_multiThreadMon = True
+          enable multiple threads to be used for running monitoring tasks
+          Type: <class 'bool'>
+      forced_shutdown_first_prompt_time = 5
+          User will get the FIRST prompt after N seconds, as specified by this
+          parameter. This parameter also defines the time that Ganga will wait
+          before shutting down, if there are only non-critical threads alive, in
+          both interactive and batch mode.
+          Type: <class 'int'>
+      forced_shutdown_policy = 'session_type'
+          If there are remaining background activities at exit such as
+          monitoring, output download Ganga will attempt to wait for the
+          activities to complete. You may select if a user is prompted to answer
+          if he wants to force shutdown ("interactive") or if the system waits
+          on a timeout without questions ("timeout"). The default is
+          "session_type" which will do interactive shutdown for CLI and timeout
+          for scripts.
+          Type: <class 'str'>
+      forced_shutdown_prompt_time = 10
+          User will get the prompt every N seconds, as specified by this
+          parameter.
+          Type: <class 'int'>
+      forced_shutdown_timeout = 60
+          Timeout in seconds for forced Ganga shutdown in batch mode.
+          Type: <class 'int'>
+      gLite = 30
+          Poll rate for gLite backend.
+          Type: <class 'int'>
+      max_shutdown_retries = 5
+          OBSOLETE: this option has no effect anymore
+          Type: <class 'int'>
+      numParallelJobs = 25
+          Number of Jobs to update the status for in parallel
+          Type: <class 'int'>
+      repeat_messages = False
+          if 0 then log only once the errors for a given backend and do not
+          repeat them anymore
+          Type: <class 'bool'>
+      update_thread_pool_size = 5
+          Size of the thread pool. Each threads monitors a specific backaend at
+          a given time. Minimum value is one, preferably set to the
+          number_of_backends + 1
+          Type: <class 'int'>
+
+Feedback : Settings for the Feedback plugin. Cannot be changed during the interactive Ganga session.
+**    uploadServer = 'http://1:8000/server'
+          The server to connect to
+          Type: <class 'str'>
+
+File_Associations : Default associations between file types and file-viewing commands. The name identifies the extension and the value the commans. New extensions can be added. A single & after the command indicates that the process will be started in the background. A && after the command indicates that a new terminal will be opened and the command executed in that terminal.
+      fallback_command = 'less'
+          Default command to use if there is no association with the file type
+          Type: <class 'str'>
+      htm = 'firefox &'
+          Command for viewing html files.
+          Type: <class 'str'>
+      html = 'firefox &'
+          Command for viewing html files.
+          Type: <class 'str'>
+      listing_command = 'ls -ltr'
+          Command for listing the content of a directory
+          Type: <class 'str'>
+      newterm_command = 'xterm'
+          Command for opening a new terminal (xterm, gnome-terminal, ...
+          Type: <class 'str'>
+      newterm_exeopt = '-e'
+          Option to give to a new terminal to tell it to execute a command.
+          Type: <class 'str'>
+      root = 'exe &&'
+          Command for opening ROOT files.
+          Type: <class 'str'>
+      tar = 'file-roller &'
+          Command for opening tar files.
+          Type: <class 'str'>
+      tgz = 'file-roller &'
+          Command for opening tar files.
+          Type: <class 'str'>
+
+ROOT : Options for Root backend
+      arch = 'x86_64-slc6-gcc48-opt'
+          Architecture of ROOT
+          Type: <class 'str'>
+      location = '/ROOT/02/x86_64-slc6-gcc48-opt'
+          Location of ROOT
+          Type: <class 'str'>
+      path = ''
+          Set to a specific ROOT version. Will override other options.
+          Type: <class 'str'>
+      pythonhome = '/Python/p1/x86_64-slc6-gcc48-opt'
+          Location of the python used for execution of PyROOT script
+          Type: <class 'str'>
+      pythonversion = 'p1'
+          Version number of python used for execution python ROOT script
+          Type: <class 'str'>
+      version = '02'
+          Version of ROOT
+          Type: <class 'str'>
+
+Local : parameters of the local backend (jobs in the background on localhost)
+      location = None
+          The location where the workdir will be created. If None it defaults to
+          the value of $TMPDIR
+          Type: <class 'NoneType'>
+      remove_workdir = True
+          remove automatically the local working directory when the job
+          completed
+          Type: <class 'bool'>
+
+LCG : LCG/gLite/EGEE configuration parameters
+      AllowedCEs = ''
+          sets allowed computing elements by a regular expression
+          Type: <class 'str'>
+      ArcConfigFile = ''
+          Config file for ARC submission. Use to specify CEs, etc. Default is
+          blank which will mean no config file is specified and the default
+          (~/arc/client.conf) is used
+          Type: <class 'str'>
+      ArcCopyCommand = 'arcget'
+          sets the copy command for ARC when dealing with sandboxes
+          Type: <class 'str'>
+      ArcJobListFile = '~/arc/xml'
+          File to store ARC job info in when submitting and monitoring, i.e.
+          argument to "-j" option in arcsub. Ganga default is different to ARC
+          default (~/.arc/jobs.xml) to keep them separate.
+          Type: <class 'str'>
+      ArcWaitTimeBeforeStartingMonitoring = 240
+          Time in seconds to wait after submission before starting to monitor
+          ARC jobs to ensure they are in the system
+          Type: <class 'int'>
+      BoundSandboxLimit = 10485760
+          sets the size limitation of the input sandbox, oversized input sandbox
+          will be pre-uploaded to the storage element specified by 'DefaultSE'
+          in the area specified by 'DefaultSRMToken'
+          Type: <class 'int'>
+      Config = ''
+          sets the generic LCG-UI configuration script for the GLITE workload
+          management system
+          Type: <class 'str'>
+          Filter: The ~ and $VARS are automatically expanded. 
+      CreamCopyCommand = 'gfal-copy-url'
+          sets the copy command for CREAM when dealing with sandboxes
+          Type: <class 'str'>
+      CreamInputSandboxBaseURI = ''
+          sets the baseURI for getting the input sandboxes for the job
+          Type: <class 'str'>
+      CreamOutputSandboxBaseURI = ''
+          sets the baseURI for putting the output sandboxes for the job
+          Type: <class 'str'>
+      DefaultLFC = 'prod-lfc-shared-ch'
+          sets the file catalogue server
+          Type: <class 'str'>
+      DefaultSE = 'ch'
+          sets the default storage element
+          Type: <class 'str'>
+      DefaultSRMToken = ''
+          sets the space token for storing temporary files (e.g. oversized input
+          sandbox)
+          Type: <class 'str'>
+      ExcludedCEs = ''
+          sets excluded computing elements by a regular expression
+          Type: <class 'str'>
+      GLITE_ALLOWED_WMS_LIST = []
+
+          Type: <class 'list'>
+      GLITE_SETUP = '/afs/ch/sw/ganga/install/config/sh'
+          sets the LCG-UI environment setup script for the GLITE middleware
+          Type: <class 'str'>
+          Filter: The ~ and $VARS are automatically expanded. 
+      GLITE_WMS_WMPROXY_ENDPOINT = ''
+          sets the WMProxy service to be contacted
+          Type: <class 'str'>
+      GliteBulkJobSize = 50
+          sets the maximum number of nodes (i.e. subjobs) in a gLite bulk job
+          Type: <class 'int'>
+      IgnoreGliteScriptHeader = False
+          sets to True will load script-based glite-wms-* commands forcely with
+          current python, a trick for 32/64 bit compatibility issues.
+          Type: <class 'bool'>
+      JobLogHandler = 'WMS'
+          sets the way the job's stdout/err are being handled.
+          Type: <class 'str'>
+      MatchBeforeSubmit = False
+          sets to True will do resource matching before submitting jobs, jobs
+          without any matched resources will fail the submission
+          Type: <class 'bool'>
+      MyProxyServer = 'ch'
+          sets the myproxy server
+          Type: <class 'str'>
+      OutputDownloaderThread = 10
+          sets the number of concurrent threads for downloading job's output
+          sandbox from gLite WMS
+          Type: <class 'int'>
+      Rank = ''
+          sets the ranking rule for picking up computing element
+          Type: <class 'str'>
+      ReplicaCatalog = ''
+          sets the replica catalogue server
+          Type: <class 'str'>
+      Requirements = 'LCGRequirements'
+          sets the full qualified class name for other specific LCG job
+          requirements
+          Type: <class 'str'>
+      RetryCount = 3
+          sets maximum number of job retry
+          Type: <class 'int'>
+      SandboxCache = 'LCGSandboxCache'
+          sets the full qualified class name for handling the oversized input
+          sandbox
+          Type: <class 'str'>
+      SandboxTransferTimeout = 60
+          sets the transfer timeout of the oversized input sandbox
+          Type: <class 'int'>
+      ShallowRetryCount = 10
+          sets maximum number of job shallow retry
+          Type: <class 'int'>
+      StatusPollingTimeout = 300
+          sets the gLite job status polling timeout in seconds
+          Type: <class 'int'>
+      StorageIndex = ''
+          sets the storage index
+          Type: <class 'str'>
+      SubmissionThread = 10
+          sets the number of concurrent threads for job submission to gLite WMS
+          Type: <class 'int'>
+      SubmissionTimeout = 300
+          sets the gLite job submission timeout in seconds
+          Type: <class 'int'>
+      VirtualOrganisation = ''
+          sets the name of the grid virtual organisation
+          Type: <class 'str'>
+
+GridSimulator : Grid Simulator configuration parameters
+      cancel_failure_rate = 0
+          probability that the Grid.cancel() method fails
+          Type: <class 'float'>
+      cancel_time = 'uniform(1,5)'
+          python expression which returns the time it takes (in seconds) to
+          complete the Grid.cancel() command (also for subjob in bulk emulation)
+          Type: <class 'str'>
+      get_output_time = 'uniform(1,5)'
+          python expression which returns the time it takes (in seconds) to
+          complete the get_output command (also for subjob in bulk emulation)
+          Type: <class 'str'>
+      job_failure_rate = 0
+          probability of the job to enter the Failed state
+          Type: <class 'float'>
+      job_finish_time = 'uniform(10,20)'
+          python expression which returns the time when the job enters the Done
+          success or Failed state
+          Type: <class 'str'>
+      job_id_resolved_time = 'uniform(1,2)'
+          python expression which returns the time it takes (in seconds) to
+          complete the resolution of all the id of a subjob (when submitted in
+          bulk) this is the time the NODE_ID becomes available from the
+          monitoring)
+          Type: <class 'str'>
+      status_time = 'uniform(1,5)'
+          python expression which returns the time it takes (in seconds) to
+          complete the status command (also for subjob in bulk emulation)
+          Type: <class 'str'>
+      submit_failure_rate = 0
+          probability that the Grid.submit() method fails
+          Type: <class 'float'>
+      submit_time = 'uniform(1,10)'
+          python expression which returns the time it takes (in seconds) to
+          complete the Grid.submit() command (also for subjob in bulk emulation)
+          Type: <class 'str'>
+
+Condor : Settings for Condor Batch system
+      query_global_queues = True
+          Query global condor queues, i.e. use '-global' flag
+          Type: <class 'bool'>
+
+LSF : internal LSF command line interface
+      heartbeat_frequency = '30'
+          Heartbeat frequency config variable
+          Type: <class 'str'>
+      jobid_name = 'LSB_BATCH_JID'
+          Name of environment with ID of the job
+          Type: <class 'str'>
+      jobnameopt = 'J'
+          String contains option name for name of job in batch system
+          Type: <class 'str'>
+      kill_res_pattern = '(^Job <\\d+> is being terminated)|(Job <\\d+>: Job has already finished)|(Job <\\d+>: No matching job found)'
+          String pattern for replay from the kill command
+          Type: <class 'str'>
+      kill_str = 'bkill %s'
+          String used to kill job
+          Type: <class 'str'>
+      postexecute = "\ndef filefilter(fn):\n  # FILTER OUT Batch INTERNAL INPUT/OUTPUT FILES:\n  # 10 digits  any number of digits  err or out\n  import re\n  internals = compile(r'\\d{10}\\\\d+(out|err)')\n  return match(fn) or fn == 'start'\n"
+          String contains commands executing before submiting job to queue
+          Type: <class 'str'>
+      preexecute = '\n'
+          String contains commands executing before submiting job to queue
+          Type: <class 'str'>
+      queue_name = 'LSB_QUEUE'
+          Name of environment with queue name of the job
+          Type: <class 'str'>
+      shared_python_executable = False
+          Shared PYTHON
+          Type: <class 'bool'>
+      stderrConfig = '-e %s/stderr'
+          String pattern for defining the stderr
+          Type: <class 'str'>
+      stdoutConfig = '-o %s/stdout'
+          String pattern for defining the stdout
+          Type: <class 'str'>
+      submit_res_pattern = '^Job <(?P<id>\\d*)> is submitted to *queue <(?P<queue>\\S*)>'
+          String pattern for replay from the submit command
+          Type: <class 'str'>
+      submit_str = 'cd %s; bsub %s %s %s %s'
+          String used to submit job to queue
+          Type: <class 'str'>
+      timeout = 600
+          Timeout in seconds after which a job is declared killed if it has not
+          touched its heartbeat file. Heartbeat is touched every 30s so do not
+          set this below 120 or so.
+          Type: <class 'int'>
+
+PBS : internal PBS command line interface
+      heartbeat_frequency = '30'
+          Heartbeat frequency config variable
+          Type: <class 'str'>
+      jobid_name = 'PBS_JOBID'
+          Name of environment with ID of the job
+          Type: <class 'str'>
+      jobnameopt = 'N'
+          String contains option name for name of job in batch system
+          Type: <class 'str'>
+      kill_res_pattern = '(^$)|(qdel: Unknown Job Id)'
+          String pattern for replay from the kill command
+          Type: <class 'str'>
+      kill_str = 'qdel %s'
+          String used to kill job
+          Type: <class 'str'>
+      postexecute = '\nenv = environ\njobnumid = env["PBS_JOBID"]\chdir("/tmp/")\system("rm -rf /tmp/%s/" %jobnumid)\n'
+          String contains commands executing before submiting job to queue
+          Type: <class 'str'>
+      preexecute = '\nenv = environ\njobnumid = env["PBS_JOBID"]\system("mkdir /tmp/%s/" %jobnumid)\chdir("/tmp/%s/" %jobnumid)\environ["PATH"]+=":"\n'
+          String contains commands executing before submiting job to queue
+          Type: <class 'str'>
+      queue_name = 'PBS_QUEUE'
+          Name of environment with queue name of the job
+          Type: <class 'str'>
+      shared_python_executable = False
+          Shared PYTHON
+          Type: <class 'bool'>
+      stderrConfig = '-e %s/stderr'
+          String pattern for defining the stderr
+          Type: <class 'str'>
+      stdoutConfig = '-o %s/stdout'
+          String pattern for defining the stdout
+          Type: <class 'str'>
+      submit_res_pattern = '^(?P<id>\\d*)\\pbs\\s*'
+          String pattern for replay from the submit command
+          Type: <class 'str'>
+      submit_str = 'cd %s; qsub %s %s %s %s'
+          String used to submit job to queue
+          Type: <class 'str'>
+      timeout = 600
+          Timeout in seconds after which a job is declared killed if it has not
+          touched its heartbeat file. Heartbeat is touched every 30s so do not
+          set this below 120 or so.
+          Type: <class 'int'>
+
+SGE : internal SGE command line interface
+      heartbeat_frequency = '30'
+          Heartbeat frequency config variable
+          Type: <class 'str'>
+      jobid_name = 'JOB_ID'
+          Name of environment with ID of the job
+          Type: <class 'str'>
+      jobnameopt = 'N'
+          String contains option name for name of job in batch system
+          Type: <class 'str'>
+      kill_res_pattern = '(has registered the job +\\d+ +for deletion)|(denied: job +"\\d+" +does not exist)'
+          String pattern for replay from the kill command
+          Type: <class 'str'>
+      kill_str = 'qdel %s'
+          String used to kill job
+          Type: <class 'str'>
+      postexecute = ''
+          String contains commands executing before submiting job to queue
+          Type: <class 'str'>
+      preexecute = 'chdir(environ["TMPDIR"])\environ["PATH"]+=":"'
+          String contains commands executing before submiting job to queue
+          Type: <class 'str'>
+      queue_name = 'QUEUE'
+          Name of environment with queue name of the job
+          Type: <class 'str'>
+      shared_python_executable = False
+          Shared PYTHON
+          Type: <class 'bool'>
+      stderrConfig = '-e %s/stderr'
+          String pattern for defining the stderr
+          Type: <class 'str'>
+      stdoutConfig = '-o %s/stdout'
+          String pattern for defining the stdout
+          Type: <class 'str'>
+      submit_res_pattern = 'Your job (?P<id>\\d+) (+)'
+          String pattern for replay from the submit command
+          Type: <class 'str'>
+      submit_str = 'cd %s; qsub -cwd -S /usr/bin/python -V %s %s %s %s'
+          String used to submit job to queue
+          Type: <class 'str'>
+      timeout = 600
+          Timeout in seconds after which a job is declared killed if it has not
+          touched its heartbeat file. Heartbeat is touched every 30s so do not
+          set this below 120 or so.
+          Type: <class 'int'>
+
+Slurm : internal Slurm command line interface
+      heartbeat_frequency = '30'
+          Heartbeat frequency config variable
+          Type: <class 'str'>
+      jobid_name = 'SLURM_JOB_ID'
+          Name of environment with ID of the job
+          Type: <class 'str'>
+      jobnameopt = 'J'
+          String contains option name for name of job in batch system
+          Type: <class 'str'>
+      kill_res_pattern = '(^$)|(^scancel: error: +)'
+          String pattern for replay from the kill command
+          Type: <class 'str'>
+      kill_str = 'scancel %s'
+          String used to kill job
+          Type: <class 'str'>
+      postexecute = '\nenv = environ\njobnumid = get("SLURM_JOB_ID") or get("SLURM_JOBID") or "pid_"+str(getpid())\nscratchDir = get("MEMFS") or get("LOCALFS") or get("SCRATCH_LOCAL") or get("SCRATCHDIR") or get("SLURM_TMPDIR") or get("SCRATCH") or get("TMPDIR") or "/tmp"\nscratchDir = scratchDir+"/workdir"\nif not jobnumid in scratchDir: scratchDir = scratchDir+"_"+jobnumid\chdir("/tmp/")\system("rm -rf "+scratchDir)\n'
+          String contains the last commands executing right before the job ends
+          Type: <class 'str'>
+      preexecute = '\nenv = environ\njobnumid = get("SLURM_JOB_ID") or get("SLURM_JOBID") or "pid_"+str(getpid())\nscratchDir = get("MEMFS") or get("LOCALFS") or get("SCRATCH_LOCAL") or get("SCRATCHDIR") or get("SLURM_TMPDIR") or get("SCRATCH") or get("TMPDIR") or "/tmp"\nscratchDir = scratchDir+"/workdir"\nif not jobnumid in scratchDir: scratchDir = scratchDir+"_"+jobnumid\system("mkdir -p "+scratchDir)\chdir(scratchDir)\n# env["PATH"]+=":"\n'
+          String contains the first commands executing right after the job
+          starts
+          Type: <class 'str'>
+      queue_name = 'SLURM_JOB_PARTITION'
+          Name of environment with partition name of the job
+          Type: <class 'str'>
+      shared_python_executable = False
+          Shared PYTHON
+          Type: <class 'bool'>
+      stderrConfig = '-e %s/stderr'
+          String pattern for defining the stderr
+          Type: <class 'str'>
+      stdoutConfig = '-o %s/stdout'
+          String pattern for defining the stdout
+          Type: <class 'str'>
+      submit_res_pattern = '^Submitted batch job (?P<id>\\d+)\\s*'
+          String pattern for replay from the submit command
+          Type: <class 'str'>
+      submit_str = 'cd %s; sbatch %s %s %s %s'
+          String used to submit job to partition
+          Type: <class 'str'>
+      timeout = 600
+          Timeout in seconds after which a job is declared killed if it has not
+          touched its heartbeat file. Heartbeat is touched every 30s so do not
+          set this below 120 or so.
+          Type: <class 'int'>
+
+Mergers : parameters for mergers
+      associate = {'log': 'TextMerger', 'root': 'RootMerger', 'text': 'TextMerger', 'txt': 'TextMerger'}
+          Dictionary of file associations
+          Type: <class 'dict'>
+      merge_output_dir = '/home/rajat/gangadir/merge_results'
+          location of the merger's outputdir
+          Type: <class 'str'>
+      std_merge = 'TextMerger'
+          Standard (default) merger
+          Type: <class 'str'>
+
+Preparable : Parameters for preparable applications
+      unprepare_on_copy = False
+          Unprepare a prepared application when it is copied
+          Type: <class 'bool'>
+
+GPIComponentFilters : Customization of GPI component object assignment
+for each category there may be multiple filters registered, the one used being defined
+in the configuration file in [GPIComponentFilters]
+e.g: {'datasets':{'lhcbdatasets':lhcbFilter, 'testdatasets':testFilter}...}
+
+      files = 'string_file_shortcut_file'
+
+          Type: <class 'str'>
+      gangafiles = 'string_file_shortcut'
+
+          Type: <class 'str'>
+      postprocessor = 'postprocessor_filter'
+
+          Type: <class 'str'>
+      shareddirs = 'string_sharedfile_shortcut'
+
+          Type: <class 'str'>
+
+Output : configuration section for postprocessing the output
+      AutoRemoveFileTypes = ['DiracFile']
+          List of outputfile types that will be auto removed when job is removed
+          if AutoRemoveFilesWithJob is True
+          Type: <class 'list'>
+      AutoRemoveFilesWithJob = False
+          if True, each outputfile of type in list AutoRemoveFileTypes will be
+          removed when the job is
+          Type: <class 'bool'>
+      DiracFile = {'fileExtensions': ['*dst'], 'backendPostprocess': {'Dirac': 'submit', 'LSF': 'WN', 'PBS': 'WN', 'SGE': 'WN', 'Slurm': 'WN', 'Condor': 'WN', 'LCG': 'WN', 'CREAM': 'WN', 'ARC': 'WN', 'Local': 'WN', 'Interactive': 'WN'}, 'uploadOptions': {}, 'defaultSite': {'upload': 'CERN-USER', 'download': 'CERN-USER'}}
+          fileExtensions:list of output files that will be written to
+          DIRAC,backendPostprocess:defines where postprocessing should be done
+          (WN/client) on different backends,uploadOptions:config values needed
+          for the actual DIRAC upload
+          Type: <class 'dict'>
+      FailJobIfNoOutputMatched = True
+          if True, a job will be marked failed if output is asked for but not
+          found.
+          Type: <class 'bool'>
+      ForbidLegacyInput = True
+          if True, writing to the job inputsandbox field will be forbidden
+          Type: <class 'bool'>
+      ForbidLegacyOutput = True
+          if True, writing to the job outputdata and outputsandbox fields will
+          be forbidden
+          Type: <class 'bool'>
+      GoogleFile = {'fileExtensions': [], 'backendPostprocess': {'Dirac': 'client', 'LSF': 'client', 'PBS': 'client', 'SGE': 'client', 'Slurm': 'client', 'Condor': 'client', 'LCG': 'client', 'CREAM': 'client', 'ARC': 'client', 'Local': 'client', 'Interactive': 'client'}, 'uploadOptions': {}}
+          fileExtensions:list of output files that will be written to
+          GoogleDrive,backendPostprocess:defines where postprocessing should be
+          done (WN/client) on different backends,uploadOptions:config values
+          needed for the actual Google upload
+          Type: <class 'dict'>
+      LCGSEFile = {'fileExtensions': ['*root', '*asd'], 'backendPostprocess': {'LSF': 'client', 'PBS': 'client', 'SGE': 'client', 'Slurm': 'client', 'Condor': 'client', 'LCG': 'WN', 'CREAM': 'WN', 'ARC': 'WN', 'Local': 'WN', 'Interactive': 'WN'}, 'uploadOptions': {'LFC_HOST': 'lfc-ch', 'dest_SRM': 'srm-ch'}}
+          fileExtensions:list of output files that will be written to LCG
+          SE,backendPostprocess:defines where postprocessing should be done
+          (WN/client) on different backends,uploadOptions:config values needed
+          for the actual LCG upload
+          Type: <class 'dict'>
+      LocalFile = {'fileExtensions': ['*txt'], 'backendPostprocess': {'Local': 'client', 'Interactive': 'client', 'LSF': 'client', 'SGE': 'client', 'Slurm': 'client', 'PBS': 'client', 'Condor': 'client', 'CREAM': 'client', 'ARC': 'client', 'Dirac': 'client'}, 'uploadOptions': {}}
+          fileExtensions:list of output files that will be written to
+          Local,backendPostprocess:defines where postprocessing should be done
+          (WN/client) on different backends,uploadOptions:config values needed
+          for the actual Local upload
+          Type: <class 'dict'>
+      MassStorageFile = {'fileExtensions': [''], 'backendPostprocess': {'LSF': 'WN', 'PBS': 'WN', 'Condor': 'WN', 'SGE': 'WN', 'Slurm': 'WN', 'LCG': 'client', 'CREAM': 'client', 'ARC': 'client', 'Local': 'WN', 'Interactive': 'client', 'Dirac': 'client'}, 'uploadOptions': {'mkdir_cmd': ' mkdir', 'cp_cmd': ' cp', 'ls_cmd': ' ls', 'path': ''}, 'defaultProtocol': 'root://ch'}
+          fileExtensions:list of output files that will be written to Mass
+          Storage,backendPostprocess:defines where postprocessing should be done
+          (WN/client) on different backends,uploadOptions:config values needed
+          for the actual EOS upload
+          Type: <class 'dict'>
+      PostProcessLocationsFileName = '__postprocesslocations__'
+          name of the file that will contain the locations of the uploaded from
+          the WN files
+          Type: <class 'str'>
+      SharedFile = {'fileExtensions': [''], 'backendPostprocess': {'LSF': 'WN', 'LCG': 'client', 'ARC': 'client', 'Dirac': 'client', 'PBS': 'WN', 'SGE': 'WN', 'Slurm': 'WN', 'Condor': 'WN', 'Interactive': 'client', 'Local': 'WN', 'CREAM': 'client'}, 'uploadOptions': {'path': '~', 'cp_cmd': 'cp', 'ls_cmd': 'ls', 'mkdir_cmd': 'mkdir'}, 'defaultProtocol': 'file://'}
+          fileExtensions:list of output files that will be written to Shared
+          Storage,backendPostprocess:defines where postprocessing should be done
+          (WN/client) on different backends,uploadOptions:config values needed
+          for the actual SharedFS upload
+          Type: <class 'dict'>
+
+Display : control the printing style of the different registries ("jobs","box","tasks"...)
+      box_columns = ('id', 'type', 'name', 'application')
+          list of job attributes to be printed in separate columns
+          Type: <class 'tuple'>
+      box_columns_functions = {'application': 'lambda obj: _name'}
+          optional converter functions
+          Type: <class 'dict'>
+      box_columns_show_empty = ['id']
+          with exception of columns mentioned here, hide all values which
+          evaluate to logical false (so 0,"",[],...)
+          Type: <class 'list'>
+      box_columns_width = {'id': 5, 'type': 20, 'name': 40, 'application': 15}
+          width of each column
+          Type: <class 'dict'>
+      config_docstring_colour = 'green'
+          colour print of the docstrings and examples
+          Type: <class 'str'>
+      config_name_colour = 'bold'
+          colour print of the names of configuration sections and options
+          Type: <class 'str'>
+      config_value_colour = 'bold'
+          colour print of the configuration values
+          Type: <class 'str'>
+      jobs_columns = ('fqid', 'status', 'name', 'subjobs', 'application', 'backend', 'actualCE', 'comment', 'subjob status')
+          list of job attributes to be printed in separate columns
+          Type: <class 'tuple'>
+      jobs_columns_functions = {'subjobs': 'lambda j: len(subjobs)', 'application': 'lambda j: __name__', 'backend': 'lambda j:__name__', 'comment': 'lambda j: comment', 'subjob status': 'lambda j: returnSubjobStatuses()'}
+          optional converter functions
+          Type: <class 'dict'>
+      jobs_columns_show_empty = ['fqid']
+          with exception of columns mentioned here, hide all values which
+          evaluate to logical false (so 0,"",[],...)
+          Type: <class 'list'>
+      jobs_columns_width = {'fqid': 8, 'status': 10, 'name': 10, 'subjobs': 8, 'application': 15, 'backend': 15, 'actualCE': 45, 'comment': 30, 'subjob status': 15}
+          width of each column
+          Type: <class 'dict'>
+      jobs_status_colours = {'new': 'normal', 'submitted': 'orange', 'running': 'green', 'completed': 'blue', 'failed': 'red'}
+          colours for jobs status
+          Type: <class 'dict'>
+      tasks_columns = ('id', 'Type', 'Name', 'State', 'Comment', 'Jobs', '\x1b[44;97mdone\x1b[0;0m')
+          list of job attributes to be printed in separate columns
+          Type: <class 'tuple'>
+      tasks_columns_functions = {'Name': 'lambda t : name', 'Type': 'lambda task : _name', 'State ': 'lambda task : status', 'Comment ': 'lambda task : comment', 'Jobs': 'lambda task : n_all()', '\x1b[44;97mdone\x1b[0;0m': "lambda task : n_status('completed')"}
+          optional converter functions
+          Type: <class 'dict'>
+      tasks_columns_show_empty = ['id', 'Jobs', '\x1b[44;97mdone\x1b[0;0m']
+          with exception of columns mentioned here, hide all values which
+          evaluate to logical false (so 0,"",[],...)
+          Type: <class 'list'>
+      tasks_columns_width = {'id': 5, 'Type': 13, 'Name': 22, 'State': 9, 'Comment': 30, 'Jobs': 33, '\x1b[44;97mdone\x1b[0;0m': 5}
+          width of each column
+          Type: <class 'dict'>
+      tasks_show_help = True
+          change this to False if you do not want to see the help screen if you
+          first type "tasks" in a session
+          Type: <class 'bool'>
+
+Tasks : Tasks configuration options
+      ForceTaskMonitoring = False
+          Monitor tasks even if the monitoring loop isn't enabled
+          Type: <class 'bool'>
+      TaskLoopFrequency = 0
+          Frequency of Task Monitoring loop in seconds
+          Type: <class 'float'>
+      disableTaskMon = False
+          Should I disable the Task Monitoring loop?
+          Type: <class 'bool'>
+
+MonitoringServices : External monitoring systems are used
+to follow the submission and execution of jobs. Each entry in this section
+defines a monitoring plugin used for a particular combination of application
+and backend. Asterisks may be used to specify any application or any
+backend. The configuration entry syntax:
+
+ApplicationName/BackendName = dot.path.to.monitoring.plugin.class.
+
+Example: DummyMS plugin will be used to track executables run on all backends:
+
+Executable/* = GangaCore.Lib.MonitoringServices.DummyMS.DummyMS
+
+
+
+Registry : This config controls the speed of flushing objects to disk
+      AutoFlusherWaitTime = 30
+          Time to wait between auto-flusher runs
+          Type: <class 'int'>
+      DisableLoadCheck = True
+          Disable the checking of recent bad jobs in bad state. Mainly used in
+          testing.
+          Type: <class 'bool'>
+      EnableAutoFlush = True
+          Enable Registry auto-flushing feature
+          Type: <class 'bool'>
+
+Credentials : This configures the credentials singleton
+      AtomicDelay = 1
+          Seconds between checking credential on disk
+          Type: <class 'int'>
+      CleanDelay = 1
+          Seconds between auto-clean of credentials when proxy externally
+          destroyed
+          Type: <class 'int'>
+
+defaults_GangaList : default attribute values for GangaList objects
+
+defaults_AfsToken : default attribute values for AfsToken objects
+
+defaults_MetadataDict : default attribute values for MetadataDict objects
+
+defaults_MultiPostProcessor : default attribute values for MultiPostProcessor objects
+
+defaults_File : default attribute values for File objects
+      name = ''
+          path to the file source
+          Allowed types: ["<class 'str'>"]
+      subdir = ''
+          destination subdirectory (a relative path)
+          Allowed types: ["<class 'str'>"]
+
+defaults_ShareDir : default attribute values for ShareDir objects
+      associated_files = []
+          A list of files associated with the sharedir
+          Allowed types: ["<class 'str'>", "<class 'IGangaFile'>"]
+      name = ''
+          path to the file source
+          Allowed types: ["<class 'str'>"]
+      subdir = ''
+          destination subdirectory (a relative path)
+          Allowed types: ["<class 'str'>"]
+
+defaults_LocalFile : default attribute values for LocalFile objects
+      compressed = False
+          wheather the output file should be compressed before sending somewhere
+          Allowed types: ["<class 'bool'>"]
+      localDir = ''
+          local dir where the file is stored, used from get and put methods
+          Allowed types: ["<class 'str'>"]
+      namePattern = ''
+          pattern of the file name
+          Allowed types: ["<class 'str'>"]
+
+defaults_MassStorageFile : default attribute values for MassStorageFile objects
+      compressed = False
+          wheather the output file should be compressed before sending somewhere
+          Allowed types: ["<class 'bool'>"]
+      inputremotedirectory = None
+          Directory on mass storage where the file is stored
+          Allowed types: ["<class 'str'>", 'None']
+      joboutputdir = ''
+          outputdir of the job with which the outputsandbox file object is
+          associated
+          Allowed types: ["<class 'str'>"]
+      localDir = ''
+          local dir where the file is stored, used from get and put methods
+          Allowed types: ["<class 'str'>"]
+      locations = []
+          list of locations where the outputfiles are uploaded
+          Allowed types: ["<class 'str'>", 'list']
+      namePattern = ''
+          pattern of the file name
+          Allowed types: ["<class 'str'>"]
+      outputfilenameformat = None
+          keyword path to where the output should be uploaded, i.e.
+          /some/path/here/{jid}/{sjid}/{fname},
+          if this field is not set, the output will go in {jid}/{sjid}/{fname}
+          or in {jid}/{fname}
+          depending on whether the job is split or not
+          Allowed types: ["<class 'str'>", 'None']
+
+defaults_SharedFile : default attribute values for SharedFile objects
+      compressed = False
+          wheather the output file should be compressed before sending somewhere
+          Allowed types: ["<class 'bool'>"]
+      inputremotedirectory = None
+          Directory on mass storage where the file is stored
+          Allowed types: ["<class 'str'>", 'None']
+      joboutputdir = ''
+          outputdir of the job with which the outputsandbox file object is
+          associated
+          Allowed types: ["<class 'str'>"]
+      localDir = ''
+          local dir where the file is stored, used from get and put methods
+          Allowed types: ["<class 'str'>"]
+      locations = []
+          list of locations where the outputfiles are uploaded
+          Allowed types: ["<class 'str'>", 'list', 'list']
+      namePattern = ''
+          pattern of the file name
+          Allowed types: ["<class 'str'>"]
+      outputfilenameformat = None
+          keyword path to where the output should be uploaded, i.e.
+          /some/path/here/{jid}/{sjid}/{fname},
+          if this field is not set, the output will go in {jid}/{sjid}/{fname}
+          or in {jid}/{fname}
+          depending on whether the job is split or not
+          Allowed types: ["<class 'str'>", 'None']
+
+defaults_VomsProxy : default attribute values for VomsProxy objects
+      group = None
+          Group for the proxy - either "group" or "group/subgroup"
+          Allowed types: ["<class 'str'>", 'None']
+      identity = None
+          Identity for the proxy
+          Allowed types: ["<class 'str'>", 'None']
+      role = None
+          Role that the proxy must have
+          Allowed types: ["<class 'str'>", 'None']
+      vo = None
+          Virtual Organisation for the proxy. Defaults to
+          LGC/VirtualOrganisation
+          Allowed types: ["<class 'str'>", 'None']
+
+defaults_LCGSEFile : default attribute values for LCGSEFile objects
+      SURL = ''
+          the LCG SE SURL
+          Allowed types: ["<class 'str'>"]
+      compressed = False
+          wheather the output file should be compressed before sending somewhere
+          Allowed types: ["<class 'bool'>"]
+      credential_requirements = 'VomsProxy'
+
+          Type: <class 'str'>
+      joboutputdir = ''
+          outputdir of the job with which the outputsandbox file object is
+          associated
+          Allowed types: ["<class 'str'>"]
+      lfc_host = 'lfc-ch'
+          the LCG LFC hostname
+          Allowed types: ["<class 'str'>"]
+      localDir = ''
+          local dir where the file is stored, used from get and put methods
+          Allowed types: ["<class 'str'>"]
+      locations = []
+          list of locations where the outputfiles were uploaded
+          Allowed types: ["<class 'str'>", 'list']
+      namePattern = ''
+          pattern of the file name
+          Allowed types: ["<class 'str'>"]
+      port = ''
+          the LCG SE port
+          Allowed types: ["<class 'str'>"]
+      se = 'srm-ch'
+          the LCG SE hostname
+          Allowed types: ["<class 'str'>"]
+      se_rpath = ''
+          the relative path to the file from the VO directory on the SE
+          Allowed types: ["<class 'str'>"]
+      se_type = ''
+          the LCG SE type
+          Allowed types: ["<class 'str'>"]
+      srm_token = ''
+          the SRM space token, meaningful only when se_type is set to srmv2
+          Allowed types: ["<class 'str'>"]
+
+defaults_SandboxFile : default attribute values for SandboxFile objects
+      compressed = False
+          wheather the output file should be compressed before sending somewhere
+          Allowed types: ["<class 'bool'>"]
+      localDir = ''
+          local dir where the file is stored, used from get and put methods
+          Allowed types: ["<class 'str'>"]
+      namePattern = ''
+          pattern of the file name
+          Allowed types: ["<class 'str'>"]
+
+defaults_GoogleFile : default attribute values for GoogleFile objects
+      compressed = False
+          wheather the output file should be compressed before sending somewhere
+          Allowed types: ["<class 'bool'>"]
+      failureReason = ''
+          reason for the upload failure
+          Allowed types: ["<class 'str'>"]
+      localDir = ''
+          local dir where the file is stored, used from get and put methods
+          Allowed types: ["<class 'str'>"]
+      namePattern = ''
+          pattern of the file name
+          Allowed types: ["<class 'str'>"]
+
+defaults_JobTime : default attribute values for JobTime objects
+      timestamps = {}
+          Dictionary containing timestamps for job
+          Type: <class 'dict'>
+
+defaults_EmptyDataset : default attribute values for EmptyDataset objects
+
+defaults_GangaDataset : default attribute values for GangaDataset objects
+      files = []
+          list of file objects that will be the inputdata for the job
+          Type: <class 'list'>
+      treat_as_inputfiles = False
+          Treat the inputdata as inputfiles, i.e. copy the inputdata to the WN
+          Allowed types: ["<class 'bool'>"]
+
+defaults_Local : default attribute values for Local objects
+      force_parallel = False
+          should jobs really be submitted in parallel
+          Allowed types: ["<class 'bool'>"]
+      nice = 0
+          adjust process priority using nice -n command
+          Allowed types: ["<class 'int'>"]
+
+defaults_Executable : default attribute values for Executable objects
+      args = ['Hello World']
+          List of arguments for the executable. Arguments may be strings,
+          numerics or File objects.
+          Allowed types: ["<class 'str'>", "<class 'File'>", "<class 'int'>", 'list']
+      env = {}
+          Dictionary of environment variables that will be replaced in the
+          running environment.
+          Allowed types: ["<class 'str'>", 'dict']
+      exe = 'echo'
+          A path (string) or a File object specifying an executable.
+          Allowed types: ["<class 'str'>", "<class 'File'>"]
+      hash = None
+          MD5 hash of the string representation of applications preparable
+          attributes
+          Allowed types: ['None', "<class 'str'>"]
+      is_prepared = None
+          Location of shared resources. Presence of this attribute implies the
+          application has been prepared.
+          Allowed types: ['None', "<class 'ShareDir'>"]
+      platform = 'ANY'
+          Platform where the job will be executed, for example
+          "x86_64-centos7-gcc8-opt"
+          Allowed types: ["<class 'str'>"]
+
+defaults_JobInfo : default attribute values for JobInfo objects
+      monitor = None
+          job monitor instance
+          Type: <class 'NoneType'>
+
+defaults_Job : default attribute values for Job objects
+      application = <Executable object at 0x7f20e4f63b88>
+          specification of the application to be executed
+          Type: <class 'Executable'>
+      backend = <Localhost object at 0x7f20e4ef35e8>
+          specification of the resources to be used (e.g. batch system)
+          Type: <class 'Localhost'>
+      comment = ''
+          comment of the job
+          Allowed types: ["<class 'str'>"]
+      do_auto_resubmit = False
+          Automatically resubmit failed subjobs
+          Allowed types: ["<class 'bool'>"]
+      info = None
+          JobInfo
+          Type: <class 'NoneType'>
+      inputdata = None
+          dataset definition (typically this is specific either to an
+          application, a site or the virtual organization
+          Type: <class 'NoneType'>
+      inputfiles = []
+          list of file objects that will act as input files for a job
+          Type: <class 'list'>
+      inputsandbox = []
+          list of File objects shipped to the worker node
+          Type: <class 'list'>
+      name = ''
+          optional label which may be any combination of ASCII characters
+          Allowed types: ["<class 'str'>"]
+      outputdata = None
+          dataset definition (typically this is specific either to an
+          application, a site or the virtual organization
+          Type: <class 'NoneType'>
+      outputfiles = []
+          list of file objects decorating what have to be done with the output
+          files after job is completed
+          Type: <class 'list'>
+      outputsandbox = []
+          list of filenames or patterns shipped from the worker node
+          Allowed types: ["<class 'str'>", 'list']
+      parallel_submit = True
+          Enable Submission of subjobs in parallel
+          Allowed types: ["<class 'bool'>"]
+      postprocessors = <MultiPostProcessor object at 0x7f20e4eef138>
+          list of postprocessors to run after job has finished
+          Type: <class 'MultiPostProcessor'>
+      splitter = None
+          optional splitter
+          Type: <class 'NoneType'>
+      virtualization = None
+          optional virtualization to be used
+          Type: <class 'NoneType'>
+
+defaults_JobTemplate : default attribute values for JobTemplate objects
+      application = <Executable object at 0x7f20e4eef5e8>
+          specification of the application to be executed
+          Type: <class 'Executable'>
+      backend = <Localhost object at 0x7f20e4eef638>
+          specification of the resources to be used (e.g. batch system)
+          Type: <class 'Localhost'>
+      comment = ''
+          comment of the job
+          Allowed types: ["<class 'str'>"]
+      do_auto_resubmit = False
+          Automatically resubmit failed subjobs
+          Allowed types: ["<class 'bool'>"]
+      info = None
+          JobInfo
+          Type: <class 'NoneType'>
+      inputdata = None
+          dataset definition (typically this is specific either to an
+          application, a site or the virtual organization
+          Type: <class 'NoneType'>
+      inputfiles = []
+          list of file objects that will act as input files for a job
+          Type: <class 'list'>
+      inputsandbox = []
+          list of File objects shipped to the worker node
+          Type: <class 'list'>
+      name = ''
+          optional label which may be any combination of ASCII characters
+          Allowed types: ["<class 'str'>"]
+      outputdata = None
+          dataset definition (typically this is specific either to an
+          application, a site or the virtual organization
+          Type: <class 'NoneType'>
+      outputfiles = []
+          list of file objects decorating what have to be done with the output
+          files after job is completed
+          Type: <class 'list'>
+      outputsandbox = []
+          list of filenames or patterns shipped from the worker node
+          Allowed types: ["<class 'str'>", 'list', 'list']
+      parallel_submit = True
+          Enable Submission of subjobs in parallel
+          Allowed types: ["<class 'bool'>"]
+      postprocessors = <MultiPostProcessor object at 0x7f20e4eef728>
+          list of postprocessors to run after job has finished
+          Type: <class 'MultiPostProcessor'>
+      splitter = None
+          optional splitter
+          Type: <class 'NoneType'>
+      virtualization = None
+          optional virtualization to be used
+          Type: <class 'NoneType'>
+
+defaults_ShareRef : default attribute values for ShareRef objects
+
+defaults_ITask : default attribute values for ITask objects
+      check_all_trfs = True
+          Check all Transforms during each monitoring loop cycle
+          Allowed types: ["<class 'bool'>"]
+      comment = ''
+          comment of the task
+          Allowed types: ["<class 'str'>"]
+      float = 0
+          Number of Jobs run concurrently
+          Allowed types: ["<class 'int'>"]
+      name = 'NewTask'
+          Name of the Task
+          Allowed types: ["<class 'str'>"]
+      transforms = []
+          list of transforms
+          Type: <class 'list'>
+
+defaults_TaskChainInput : default attribute values for TaskChainInput objects
+      exclude_file_mask = []
+          List of Regular expressions of which files to exclude for input
+          Allowed types: ["<class 'str'>", 'list']
+      include_file_mask = []
+          List of Regular expressions of which files to include for input
+          Allowed types: ["<class 'str'>", 'list']
+      input_trf_id = -1
+          Input Transform ID
+          Allowed types: ["<class 'int'>"]
+      single_unit = False
+          Create a single unit from all inputs in the transform
+          Allowed types: ["<class 'bool'>"]
+      use_copy_output = True
+          Use the copied output instead of default output (e.g. use local copy
+          instead of grid copy)
+          Allowed types: ["<class 'bool'>"]
+
+defaults_TaskLocalCopy : default attribute values for TaskLocalCopy objects
+      exclude_file_mask = []
+          List of Regular expressions of which files to exclude from copy
+          Allowed types: ["<class 'str'>", 'list']
+      files = []
+          List of successfully downloaded files
+          Allowed types: ["<class 'str'>", 'list']
+      include_file_mask = []
+          List of Regular expressions of which files to include in copy
+          Allowed types: ["<class 'str'>", 'list']
+      local_location = ''
+          Local location to copy files to
+          Allowed types: ["<class 'str'>"]
+
+defaults_CoreTask : default attribute values for CoreTask objects
+      check_all_trfs = True
+          Check all Transforms during each monitoring loop cycle
+          Allowed types: ["<class 'bool'>"]
+      comment = ''
+          comment of the task
+          Allowed types: ["<class 'str'>"]
+      float = 0
+          Number of Jobs run concurrently
+          Allowed types: ["<class 'int'>"]
+      name = 'NewTask'
+          Name of the Task
+          Allowed types: ["<class 'str'>"]
+      transforms = []
+          list of transforms
+          Type: <class 'list'>
+
+defaults_CoreUnit : default attribute values for CoreUnit objects
+      application = None
+          Application of the Transform.
+          Type: <class 'NoneType'>
+      copy_output = None
+          The dataset to copy the output of this unit to, e.g. Grid dataset ->
+          Local Dataset
+          Type: <class 'NoneType'>
+      inputdata = None
+          Input dataset
+          Type: <class 'NoneType'>
+      inputfiles = []
+          list of file objects that will act as input files for a job
+          Type: <class 'list'>
+      inputsandbox = []
+          list of File objects shipped to the worker node
+          Type: <class 'list'>
+      merger = None
+          Merger to be run after this unit completes.
+          Type: <class 'NoneType'>
+      name = 'Simple Unit'
+          Name of the unit (cosmetic)
+          Allowed types: ["<class 'str'>"]
+      outputdata = None
+          Output dataset
+          Type: <class 'NoneType'>
+      outputfiles = []
+          list of OutputFile objects to be copied to all jobs
+          Type: <class 'list'>
+      postprocessors = None
+          list of postprocessors to run after job has finished
+          Type: <class 'NoneType'>
+      splitter = None
+          Splitter used on each unit of the Transform.
+          Type: <class 'NoneType'>
+
+defaults_ArgSplitter : default attribute values for ArgSplitter objects
+      args = []
+          A list of lists of arguments to pass to script
+          Allowed types: ["<class 'list'>", "<class 'GangaList'>", 'list']
+
+defaults_GenericSplitter : default attribute values for GenericSplitter objects
+      attribute = ''
+          The attribute on which the job is splitted
+          Allowed types: ["<class 'str'>"]
+      multi_attrs = {}
+          Dictionary to specify multiple attributes to split over
+          Type: <class 'dict'>
+      values = []
+          A list of the values corresponding to the attribute of the subjobs
+          Type: <class 'list'>
+
+defaults_GangaDatasetSplitter : default attribute values for GangaDatasetSplitter objects
+      files_per_subjob = 5
+          the number of files per subjob
+          Allowed types: ["<class 'int'>"]
+      maxFiles = -1
+          Maximum number of files to use in a masterjob (None or -1 = all files)
+          Allowed types: ["<class 'int'>", 'None']
+
+defaults_CoreTransform : default attribute values for CoreTransform objects
+      abort_loop_on_submit = True
+          Break out of the Task Loop after submissions
+          Allowed types: ["<class 'bool'>"]
+      application = None
+          Application of the Transform.
+          Type: <class 'NoneType'>
+      backend = None
+          Backend of the Transform.
+          Type: <class 'NoneType'>
+      chain_delay = 0
+          Minutes delay between a required/chained unit completing and starting
+          this one
+          Allowed types: ["<class 'int'>"]
+      chaindata_as_inputfiles = False
+          Treat the inputdata as inputfiles, i.e. copy the inputdata to the WN
+          Allowed types: ["<class 'bool'>"]
+      copy_output = None
+          The dataset to copy all units output to, e.g. Grid dataset -> Local
+          Dataset
+          Type: <class 'NoneType'>
+      fields_to_copy = []
+          A list of fields that should be copied when creating units, e.g.
+          application, inputfiles. Empty (default) implies all fields are copied
+          unless the GeenricSplitter is used
+          Allowed types: ["<class 'str'>", 'list']
+      files_per_unit = -1
+          Number of files per unit if possible. Set to -1 to just create a unit
+          per input dataset
+          Allowed types: ["<class 'int'>"]
+      inputfiles = []
+          list of file objects that will act as input files for a job
+          Type: <class 'list'>
+      inputsandbox = []
+          list of File objects shipped to the worker node
+          Type: <class 'list'>
+      max_active_threads = 10
+          Maximum number of Ganga Threads to use. Note that the number of
+          simultaneous threads is controlled by the queue system (default is 5)
+          Allowed types: ["<class 'int'>"]
+      name = 'Simple Transform'
+          Name of the transform (cosmetic)
+          Allowed types: ["<class 'str'>"]
+      outputdata = None
+          Output dataset template
+          Type: <class 'NoneType'>
+      outputfiles = []
+          list of OutputFile objects to be copied to all jobs
+          Type: <class 'list'>
+      outputsandbox = []
+          list of filenames or patterns shipped from the worker node
+          Allowed types: ["<class 'str'>", 'list']
+      postprocessors = None
+          list of postprocessors to run after job has finished
+          Type: <class 'NoneType'>
+      rebroker_on_job_fail = True
+          Rebroker if too many minor resubs
+          Allowed types: ["<class 'bool'>"]
+      required_trfs = []
+          IDs of transforms that must complete before this unit will start. NOTE
+          DOESN'T COPY OUTPUT DATA TO INPUT DATA. Use TaskChainInput Dataset for
+          that.
+          Allowed types: ["<class 'int'>", 'list']
+      splitter = None
+          Splitter used on each unit of the Transform.
+          Type: <class 'NoneType'>
+      submit_with_threads = False
+          Use Ganga Threads for submission
+          Allowed types: ["<class 'bool'>"]
+      unit_copy_output = None
+          The dataset to copy each individual unit output to, e.g. Grid dataset
+          -> Local Dataset
+          Type: <class 'NoneType'>
+      unit_merger = None
+          Merger to be copied and run on each unit separately.
+          Type: <class 'NoneType'>
+      unit_splitter = None
+          Splitter to be used to create the units
+          Type: <class 'NoneType'>
+      units = []
+          list of units
+          Type: <class 'list'>
+
+DIRAC : Parameters for DIRAC
+      DiracCommandFiles = ['/home/rajat/ganga/ganga/GangaDirac/Lib/Server/py', '/home/rajat/ganga/ganga/GangaDirac/Lib/Server/py']
+          The file containing the python commands that the local DIRAC server
+          can execute. The default DiracCommands.py is added automatically
+          Type: <class 'list'>
+      DiracEnvFile = ''
+          DEPRECATED. Ganga environment file for DIRAC environment (do not
+          change unless you are sure you know what you are doing).
+          Type: <class 'str'>
+      DiracEnvJSON = None
+          A JSON file containing the environment for DIRAC. Overrides
+          DiracEnvSource
+          Type: <class 'NoneType'>
+      DiracEnvSource = None
+          File to be sourced to provide the DIRAC environment. E.g.
+          /cvmfs/ganga.cern.ch/dirac_ui/bashrc
+          Type: <class 'NoneType'>
+      DiracFileAutoGet = True
+          Should the DiracFile object automatically poll the Dirac backend for
+          missing information on an lfn?
+          Type: <class 'bool'>
+      DiracLFNBase = ''
+          Base dir prepended to create LFN name from DiracFile('name'). If this
+          is unset then it will default to /[userVO]/user/[first letter of user
+          name]/[user name]
+          Type: <class 'str'>
+      MaxDiracBulkJobs = 500
+          The Maximum allowed number of bulk submitted jobs before Ganga
+          intervenes
+          Type: <class 'int'>
+      OfflineSplitterFraction = 75
+          If subset is above OfflineSplitterFraction*filesPerJob then keep the
+          subset
+          Type: <class 'float'>
+      OfflineSplitterLimit = 50
+          Number of iterations of selecting random Sites that are performed
+          before the spliter reduces the OfflineSplitter fraction by raising it
+          by 1 power and reduces OfflineSplitterMaxCommonSites by 1. Smaller
+          number makes the splitter accept many smaller subsets higher means
+          keeping more subsets but takes much more CPU to match files
+          accordingly.
+          Type: <class 'int'>
+      OfflineSplitterMaxCommonSites = 2
+          Maximum number of storage sites all LFN should share in the same
+          dataset. This is reduced to 1 as the splitter gets more desperate to
+          group the data.
+          Type: <class 'int'>
+      OfflineSplitterUniqueSE = False
+          Should the Sites chosen be accessing different Storage Elements.
+          Type: <class 'bool'>
+      ReplicateOutputData = False
+          Determines whether outputdata stored on Dirac is replicated
+          Type: <class 'bool'>
+      RequireDefaultSE = True
+          Do we require the user to configure a defaultSE in some way?
+          Type: <class 'bool'>
+      Timeout = 1000
+          Default timeout (seconds) for Dirac commands
+          Type: <class 'int'>
+      allDiracSE = []
+          SE/Space-Tokens allowed for replication, writing files etc.
+          Type: <class 'list'>
+      default_downloadOutputSandbox = True
+          Donwload output sandboxes by default
+          Type: <class 'bool'>
+      default_finaliseOnMaster = False
+          Finalise all the subjobs in one go
+          Type: <class 'bool'>
+      default_unpackOutputSandbox = True
+          Unpack output sandboxes by default
+          Type: <class 'bool'>
+      failed_sandbox_download = True
+          Automatically download sandbox for failed jobs?
+          Type: <class 'bool'>
+      finalised_statuses = {'Done': 'completed', 'Failed': 'failed', 'Killed': 'failed', 'Deleted': 'failed', 'Unknown: No status for Job': 'failed'}
+          Mapping of Dirac to Ganga Job statuses used to construct a queue to
+          finalize a given job, i.e. final statues in 'statusmapping'
+          Type: <class 'dict'>
+      load_default_Dirac_backend = True
+          Whether or not to load the default dirac backend. This allows packages
+          to load a modified version if necessary
+          Type: <class 'bool'>
+      maxSubjobsFinalisationPerProcess = 40
+          Set the maximum number of subjobs to be finalised per process. Not too
+          high to avoid DIRAC timeouts
+          Type: <class 'int'>
+      maxSubjobsPerProcess = 100
+          Set the maximum number of subjobs to be submitted per process.
+          Type: <class 'int'>
+      noInputDataBannedSites = []
+          List of sites to ban when a user job has no input data (this is meant
+          to reduce the load on these sites)
+          Type: <class 'list'>
+      proxyInfoCmd = 'dirac-proxy-info'
+          Configurable which sets the default proxy init command for DIRAC
+          Type: <class 'str'>
+      proxyInitCmd = 'dirac-proxy-init'
+          Configurable which sets the default proxy init command for DIRAC
+          Type: <class 'str'>
+      serializeBackend = False
+          Developer option to serialize Dirac code for profiling/debugging
+          Type: <class 'bool'>
+      splitFilesChunks = 5000
+          when splitting datasets, pre split into chunks of this int
+          Type: <class 'int'>
+      statusmapping = {'Checking': 'submitted', 'Completed': 'running', 'Deleted': 'failed', 'Done': 'completed', 'Failed': 'failed', 'Killed': 'failed', 'Matched': 'submitted', 'Received': 'submitted', 'Running': 'running', 'Staging': 'submitted', 'Stalled': 'running', 'Waiting': 'submitted'}
+          Mapping between Dirac Job Major Status and Ganga Job Status
+          Type: <class 'dict'>
+      useGangaPath = False
+          Should we use the Ganga job ID to auto-construct a LFN relative path?
+          Type: <class 'bool'>
+      userVO = ''
+          The name of the VO that the user belongs to
+          Type: <class 'str'>
+
+defaults_TextMerger : default attribute values for TextMerger objects
+      compress = False
+          Output should be compressed with gzip.
+          Allowed types: ["<class 'bool'>"]
+      files = []
+          A list of files to merge.
+          Allowed types: ["<class 'str'>", 'list']
+      ignorefailed = False
+          Jobs that are in the failed or killed states will be excluded from the
+          merge when this flag is set to True.
+          Allowed types: ["<class 'bool'>"]
+      overwrite = False
+          The default behaviour for this Merger object. Will overwrite output
+          files.
+          Allowed types: ["<class 'bool'>"]
+
+defaults_RootMerger : default attribute values for RootMerger objects
+      args = None
+          Arguments to be passed to hadd.
+          Allowed types: ["<class 'str'>", 'None']
+      files = []
+          A list of files to merge.
+          Allowed types: ["<class 'str'>", 'list']
+      ignorefailed = False
+          Jobs that are in the failed or killed states will be excluded from the
+          merge when this flag is set to True.
+          Allowed types: ["<class 'bool'>"]
+      overwrite = False
+          The default behaviour for this Merger object. Will overwrite output
+          files.
+          Allowed types: ["<class 'bool'>"]
+
+defaults_CustomMerger : default attribute values for CustomMerger objects
+      files = []
+          A list of files to merge.
+          Allowed types: ["<class 'str'>", 'list']
+      ignorefailed = False
+          Jobs that are in the failed or killed states will be excluded from the
+          merge when this flag is set to True.
+          Allowed types: ["<class 'bool'>"]
+      module = None
+          Path to a python module to perform the merge.
+          Type: <class 'NoneType'>
+      overwrite = False
+          The default behaviour for this Merger object. Will overwrite output
+          files.
+          Allowed types: ["<class 'bool'>"]
+
+defaults_SmartMerger : default attribute values for SmartMerger objects
+      files = []
+          A list of files to merge.
+          Allowed types: ["<class 'str'>", 'list']
+      ignorefailed = False
+          Jobs that are in the failed or killed states will be excluded from the
+          merge when this flag is set to True.
+          Allowed types: ["<class 'bool'>"]
+      overwrite = False
+          The default behaviour for this Merger object. Will overwrite output
+          files.
+          Allowed types: ["<class 'bool'>"]
+
+defaults_Root : default attribute values for Root objects
+      args = []
+          List of arguments for the script. Accepted types are numerics and
+          strings
+          Allowed types: ["<class 'str'>", "<class 'int'>", 'list']
+      script = None
+          A File object specifying the script to execute when Root starts
+          Type: <class 'NoneType'>
+      usepython = False
+          Execute 'script' using Python. The PyRoot libraries are added to the
+          PYTHONPATH.
+          Allowed types: ["<class 'bool'>"]
+      version = '02'
+          The version of Root to run
+          Allowed types: ["<class 'str'>"]
+
+defaults_Notebook : default attribute values for Notebook objects
+      hash = None
+          MD5 hash of the string representation of applications preparable
+          attributes
+          Allowed types: ['None', "<class 'str'>"]
+      is_prepared = None
+          Location of shared resources. Presence of this attribute implies the
+          application has been prepared.
+          Allowed types: ['None', "<class 'ShareDir'>"]
+      kernel = 'python2'
+          The kernel to use for the notebook execution. Depending on
+          configuration, python3, Root and R might be available.
+          Allowed types: ["<class 'str'>"]
+      regexp = ['+\\ipynb$']
+          Regular expression for the inputfiles to match for executing.
+          Allowed types: ['str', 'list']
+      timeout = None
+          Timeout in seconds for executing a notebook. If None, the default
+          value will be taken.
+          Allowed types: ['None', "<class 'int'>"]
+      version = None
+          Version of the notebook. If None, it will be assumed that it is the
+          latest one.
+          Allowed types: ['None', "<class 'int'>"]
+
+defaults_GridFileIndex : default attribute values for GridFileIndex objects
+      attributes = {}
+          a key:value pairs of file metadata
+          Type: <class 'dict'>
+      id = ''
+          the main identity of the file
+          Allowed types: ["<class 'str'>"]
+      md5sum = ''
+          the md5sum of the file
+          Allowed types: ["<class 'str'>"]
+      name = ''
+          the name of the file
+          Allowed types: ["<class 'str'>"]
+
+defaults_GridSandboxCache : default attribute values for GridSandboxCache objects
+      max_try = 1
+          max. number of tries in case of failures
+          Allowed types: ["<class 'int'>"]
+      protocol = ''
+          file transfer protocol
+          Allowed types: ["<class 'str'>"]
+
+defaults_GridftpFileIndex : default attribute values for GridftpFileIndex objects
+      attributes = {}
+          a key:value pairs of file metadata
+          Type: <class 'dict'>
+      id = ''
+          the main identity of the file
+          Allowed types: ["<class 'str'>"]
+      md5sum = ''
+          the md5sum of the file
+          Allowed types: ["<class 'str'>"]
+      name = ''
+          the name of the file
+          Allowed types: ["<class 'str'>"]
+
+defaults_GridftpSandboxCache : default attribute values for GridftpSandboxCache objects
+      baseURI = ''
+          the base URI for storing cached files
+          Allowed types: ["<class 'str'>"]
+      copyCommand = 'globus-copy-url'
+          the command to be exectued to copy files
+          Allowed types: ["<class 'str'>"]
+      max_try = 1
+          max. number of tries in case of failures
+          Allowed types: ["<class 'int'>"]
+      protocol = ''
+          file transfer protocol
+          Allowed types: ["<class 'str'>"]
+
+defaults_LCG : default attribute values for LCG objects
+      CE = ''
+          Request a specific Computing Element
+          Allowed types: ["<class 'str'>"]
+      credential_requirements = VomsProxy()
+
+          Type: <class 'VomsProxy'>
+      jobtype = 'Normal'
+          Job type: Normal, MPICH
+          Allowed types: ["<class 'str'>"]
+      middleware = 'GLITE'
+          Middleware type
+          Allowed types: ["<class 'str'>"]
+      perusable = False
+          Enable the job perusal feature of GLITE
+          Allowed types: ["<class 'bool'>"]
+      requirements = None
+          Requirements for the resource selection
+          Type: <class 'NoneType'>
+      sandboxcache = None
+          Interface for handling oversized input sandbox
+          Type: <class 'NoneType'>
+
+defaults_CREAM : default attribute values for CREAM objects
+      CE = ''
+          CREAM CE endpoint
+          Allowed types: ["<class 'str'>"]
+      credential_requirements = VomsProxy()
+
+          Type: <class 'VomsProxy'>
+      jobtype = 'Normal'
+          Job type: Normal, MPICH
+          Allowed types: ["<class 'str'>"]
+      requirements = None
+          Requirements for the resource selection
+          Type: <class 'NoneType'>
+      sandboxcache = None
+          Interface for handling oversized input sandbox
+          Type: <class 'NoneType'>
+
+defaults_ARC : default attribute values for ARC objects
+      CE = ''
+          ARC CE endpoint
+          Allowed types: ["<class 'str'>"]
+      credential_requirements = VomsProxy()
+
+          Type: <class 'VomsProxy'>
+      jobtype = 'Normal'
+          Job type: Normal, MPICH
+          Allowed types: ["<class 'str'>"]
+      queue = ''
+          The queue to send the job to.
+          Allowed types: ["<class 'str'>"]
+      requirements = None
+          Requirements for the resource selection
+          Type: <class 'NoneType'>
+      sandboxcache = None
+          Interface for handling oversized input sandbox
+          Type: <class 'NoneType'>
+      verbose = False
+          Use verbose options for ARC commands
+          Allowed types: ["<class 'bool'>"]
+      xRSLextras = None
+          Extra things to put into the xRSL for submission.
+          Allowed types: ["<class 'dict'>", 'None']
+
+defaults_LCGRequirements : default attribute values for LCGRequirements objects
+      allowedCEs = ''
+          allowed CEs in regular expression
+          Allowed types: ["<class 'str'>"]
+      cputime = 0
+          Minimum available CPU time (min)
+          Allowed types: ["<class 'int'>"]
+      dataaccessprotocol = ['gsiftp']
+          A list of strings giving the available DataAccessProtocol protocols
+          Allowed types: ["<class 'str'>", 'list']
+      datarequirements = []
+          The DataRequirements entry for the JDL. A list of dictionaries, each
+          with "InputData", "DataCatalogType" and optionally "DataCatalog"
+          entries
+          Allowed types: ["<class 'dict'>", 'list']
+      excludedCEs = ''
+          excluded CEs in regular expression
+          Allowed types: ["<class 'str'>"]
+      ipconnectivity = False
+          External connectivity
+          Allowed types: ["<class 'bool'>"]
+      memory = 0
+          Mininum available memory (MB)
+          Allowed types: ["<class 'int'>"]
+      nodenumber = 1
+          Number of Nodes for MPICH jobs
+          Allowed types: ["<class 'int'>"]
+      other = []
+          Other Requirements
+          Allowed types: ["<class 'str'>", 'list']
+      software = []
+          Software Installations
+          Allowed types: ["<class 'str'>", 'list']
+      walltime = 0
+          Mimimum available total time (min)
+          Allowed types: ["<class 'int'>"]
+
+defaults_LCGFileIndex : default attribute values for LCGFileIndex objects
+      attributes = {}
+          a key:value pairs of file metadata
+          Type: <class 'dict'>
+      id = ''
+          the main identity of the file
+          Allowed types: ["<class 'str'>"]
+      lfc_host = ''
+          the LFC hostname
+          Allowed types: ["<class 'str'>"]
+      local_fpath = ''
+          the original file path on local machine
+          Allowed types: ["<class 'str'>"]
+      md5sum = ''
+          the md5sum of the file
+          Allowed types: ["<class 'str'>"]
+      name = ''
+          the name of the file
+          Allowed types: ["<class 'str'>"]
+
+defaults_LCGSandboxCache : default attribute values for LCGSandboxCache objects
+      lfc_host = ''
+          the LCG LFC hostname
+          Allowed types: ["<class 'str'>"]
+      max_try = 1
+          max. number of tries in case of failures
+          Allowed types: ["<class 'int'>"]
+      protocol = ''
+          file transfer protocol
+          Allowed types: ["<class 'str'>"]
+      se = ''
+          the LCG SE hostname
+          Allowed types: ["<class 'str'>"]
+      se_rpath = 'generated'
+          the relative path to the VO directory on the SE
+          Allowed types: ["<class 'str'>"]
+      se_type = 'srmv2'
+          the LCG SE type
+          Allowed types: ["<class 'str'>"]
+      srm_token = ''
+          the SRM space token, meaningful only when se_type is set to srmv2
+          Allowed types: ["<class 'str'>"]
+
+defaults_Condor : default attribute values for Condor objects
+      accounting_group = ''
+          Provide an accounting group for this job.
+          Allowed types: ["<class 'str'>"]
+      cdf_options = {}
+          Additional options to set in the CDF file given by a dictionary
+          Type: <class 'dict'>
+      env = {}
+          Environment settings for execution host
+          Type: <class 'dict'>
+      getenv = 'False'
+          Flag to pass current envrionment to execution host
+          Allowed types: ["<class 'str'>"]
+      globus_rsl = ''
+          Globus RSL settings (for Condor-G submission)
+          Allowed types: ["<class 'str'>"]
+      globusscheduler = ''
+          Globus scheduler to be used (required for Condor-G submission)
+          Allowed types: ["<class 'str'>"]
+      rank = 'Memory'
+          Ranking scheme to be used when selecting execution host
+          Allowed types: ["<class 'str'>"]
+      requirements = 'CondorRequirements'
+          Requirements for selecting execution host
+          Type: <class 'str'>
+      shared_filesystem = True
+          Flag indicating if Condor nodes have shared filesystem
+          Allowed types: ["<class 'bool'>"]
+      spool = True
+          Spool all required input files, job event log, and proxy over the
+          connection to the condor_schedd. Required for EOS, see: http://batchdo
+          cs.web.cern.ch/batchdocs/troubleshooting/eos_submission.html
+          Allowed types: ["<class 'bool'>"]
+      submit_options = []
+          Options passed to Condor at submission time
+          Allowed types: ["<class 'str'>", 'list']
+      universe = 'vanilla'
+          Type of execution environment to be used by Condor
+          Allowed types: ["<class 'str'>"]
+
+defaults_CondorRequirements : default attribute values for CondorRequirements objects
+      arch = ''
+          System architecture
+          Allowed types: ["<class 'str'>"]
+      excluded_machine = ''
+          Excluded execution hosts, given as a string of space-separated names:
+          'machine1 machine2 machine3'; or as a list of names: [ 'machine1',
+          'machine2', 'machine3' ]
+          Allowed types: ["<class 'str'>", "<class 'list'>"]
+      machine = ''
+          Requested execution hosts, given as a string of space-separated names:
+          'machine1 machine2 machine3'; or as a list of names: [ 'machine1',
+          'machine2', 'machine3' ]
+          Allowed types: ["<class 'str'>", "<class 'list'>"]
+      memory = 0
+          Mininum physical memory
+          Allowed types: ["<class 'int'>"]
+      opsys = ''
+          Operating system
+          Allowed types: ["<class 'str'>"]
+      other = []
+          Other requirements, given as a list of strings, for example: [ 'OSTYPE
+          == "SLC4"', '(POOL == "GENERAL" || POOL == "GEN_FARM")' ]; the final
+          requirement is the AND of all elements in the list
+          Allowed types: ["<class 'str'>", 'list']
+      virtual_memory = 0
+          Minimum virtual memory
+          Allowed types: ["<class 'int'>"]
+
+defaults_Interactive : default attribute values for Interactive objects
+
+defaults_LSF : default attribute values for LSF objects
+      extraopts = ''
+          extra options for Batch. See help(Batch) for more details
+          Allowed types: ["<class 'str'>"]
+      queue = ''
+          queue name as defomed in your local Batch installation
+          Allowed types: ["<class 'str'>"]
+
+defaults_PBS : default attribute values for PBS objects
+      extraopts = ''
+          extra options for Batch. See help(Batch) for more details
+          Allowed types: ["<class 'str'>"]
+      queue = ''
+          queue name as defomed in your local Batch installation
+          Allowed types: ["<class 'str'>"]
+
+defaults_SGE : default attribute values for SGE objects
+      extraopts = ''
+          extra options for Batch. See help(Batch) for more details
+          Allowed types: ["<class 'str'>"]
+      queue = ''
+          queue name as defomed in your local Batch installation
+          Allowed types: ["<class 'str'>"]
+
+defaults_Slurm : default attribute values for Slurm objects
+      extraopts = ''
+          extra options for Batch. See help(Batch) for more details
+          Allowed types: ["<class 'str'>"]
+      queue = ''
+          queue name as defomed in your local Batch installation
+          Allowed types: ["<class 'str'>"]
+
+defaults_Remote : default attribute values for Remote objects
+      environment = {}
+          Overides any environment variables set in the job
+          Type: <class 'dict'>
+      ganga_cmd = ''
+          Command line to start ganga on the remote host
+          Allowed types: ["<class 'str'>"]
+      ganga_dir = ''
+          The directory to use for the remote workspace, repository, etc.
+          Allowed types: ["<class 'str'>"]
+      host = ''
+          The remote host and port number ('host:port') to use. Default port is
+          22.
+          Allowed types: ["<class 'str'>"]
+      key_type = 'RSA'
+          Set to the type of ssh key to use (if required). Possible values are
+          'RSA' and 'DSS'.
+          Allowed types: ["<class 'str'>"]
+      pre_script = ['']
+          Sequence of commands to execute before running Ganga on the remote
+          site
+          Allowed types: ["<class 'list'>"]
+      remote_backend = None
+          specification of the resources to be used (e.g. batch system)
+          Type: <class 'NoneType'>
+      ssh_key = ''
+          Set to true to the location of the the ssh key to use for
+          authentication, e.g. /home/mws/.ssh/id_rsa. Note, you should make sure
+          'key_type' is also set correctly.
+          Allowed types: ["<class 'str'>"]
+      username = ''
+          The username at the remote host
+          Allowed types: ["<class 'str'>"]
+
+defaults_FileChecker : default attribute values for FileChecker objects
+      checkMaster = True
+          Run on master
+          Allowed types: ["<class 'bool'>"]
+      checkSubjobs = True
+          Run on subjobs
+          Allowed types: ["<class 'bool'>"]
+      failIfFound = True
+          Toggle whether job fails if string is found or not found.
+          Allowed types: ["<class 'bool'>"]
+      files = []
+          File to search in
+          Allowed types: ["<class 'list'>"]
+      filesMustExist = True
+          Toggle whether to fail job if a file isn't found.
+          Allowed types: ["<class 'bool'>"]
+      searchStrings = []
+          String to search for
+          Allowed types: ["<class 'list'>"]
+
+defaults_CustomChecker : default attribute values for CustomChecker objects
+      checkMaster = True
+          Run on master
+          Allowed types: ["<class 'bool'>"]
+      checkSubjobs = True
+          Run on subjobs
+          Allowed types: ["<class 'bool'>"]
+      module = None
+          Path to a python module to perform the check.
+          Type: <class 'NoneType'>
+
+defaults_RootFileChecker : default attribute values for RootFileChecker objects
+      checkMaster = True
+          Run on master
+          Allowed types: ["<class 'bool'>"]
+      checkMerge = True
+          Toggle whether to check the merging proceedure
+          Allowed types: ["<class 'bool'>"]
+      checkSubjobs = True
+          Run on subjobs
+          Allowed types: ["<class 'bool'>"]
+      files = []
+          File to search in
+          Allowed types: ["<class 'list'>"]
+      filesMustExist = True
+          Toggle whether to fail job if a file isn't found.
+          Allowed types: ["<class 'bool'>"]
+
+defaults_Notifier : default attribute values for Notifier objects
+      address = ''
+          Email address
+          Allowed types: ["<class 'str'>"]
+      verbose = False
+          Email on subjob completion
+          Allowed types: ["<class 'bool'>"]
+
+defaults_Docker : default attribute values for Docker objects
+      image = ''
+          Link to the container image
+          Allowed types: ["<class 'str'>"]
+      mode = 'P1'
+          Mode of container execution
+          Allowed types: ["<class 'str'>"]
+      mounts = {'/cvmfs': '/cvmfs'}
+          Mounts to attempt from the host system. The key is the directory name
+          on the host, and the value inside the container. If the directory is
+          not available on the host, it will just be silently dropped from the
+          list of mount points.
+          Type: <class 'dict'>
+      options = []
+          A list of options to pass onto the virtualization command.
+          Allowed types: ["<class 'list'>", "<class 'GangaList'>", 'list']
+      tokenpassword = ''
+          Deploy token password
+          Allowed types: ["<class 'str'>"]
+      tokenuser = ''
+          Deploy token username
+          Allowed types: ["<class 'str'>"]
+
+defaults_Singularity : default attribute values for Singularity objects
+      image = ''
+          Link to the container image. This can either be a singularity URL or a
+          GangaFile object
+          Allowed types: ["<class 'str'>", 'IGangaFile']
+      mounts = {'/cvmfs': '/cvmfs'}
+          Mounts to attempt from the host system. The key is the directory name
+          on the host, and the value inside the container. If the directory is
+          not available on the host, it will just be silently dropped from the
+          list of mount points.
+          Type: <class 'dict'>
+      options = []
+          A list of options to pass onto the virtualization command.
+          Allowed types: ["<class 'list'>", "<class 'GangaList'>", 'list']
+      tokenpassword = ''
+          Deploy token password
+          Allowed types: ["<class 'str'>"]
+      tokenuser = ''
+          Deploy token username
+          Allowed types: ["<class 'str'>"]
+
+defaults_JobTree : default attribute values for JobTree objects
+      name = ''
+
+          Allowed types: ["<class 'str'>"]
+

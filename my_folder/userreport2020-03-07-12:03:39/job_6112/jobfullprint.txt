@@ -1,0 +1,49 @@
+ Job (
+   outputsandbox = [],
+   comment = '',
+   id = 6112,
+   status = 'completed',
+   name = '',
+   inputdir = '/home/rajat/gangadir/workspace/rajat/LocalXML/6112/input/',
+   outputdir = '/home/rajat/gangadir/workspace/rajat/LocalXML/6112/output/',
+   do_auto_resubmit = False,
+   parallel_submit = True,
+   inputsandbox =[],
+   info =   JobInfo (
+     submit_counter = 1,
+     uuid = '',
+     monitoring_links = [],
+     monitor =None
+   ),
+   time =   JobTime (
+     timestamps = {'new':2020-03-07 06:33:28.663037, 'submitting':2020-03-07 06:33:30.391609, 'submitted':2020-03-07 06:33:34.957661, 'backend_running':2020-03-07 06:33:35, 'running':2020-03-07 06:33:36.377964, 'backend_final':2020-03-07 06:33:36, 'final':2020-03-07 06:33:39.789775}
+   ),
+   application =   Executable (
+     exe = 'echo',
+     args = ['Hello World'],
+     env = {},
+     platform = 'ANY',
+     is_prepared = ShareDir(name='conf-6532dc28-65b8-4e66-adeb-637171d9e0cc',subdir='.'),
+     hash = 'cfa689697ba25ae38f7a47b232ea3e7c'
+   ),
+   backend =   Local (
+     id = 17817,
+     exitcode = 0,
+     workdir = '/tmp/tmp74_4srco',
+     actualCE = 'rajat',
+     nice = 0,
+     force_parallel = False
+   ),
+   inputfiles =[],
+   outputfiles =[],
+   inputdata =None,
+   outputdata =None,
+   splitter =None,
+   subjobs =[],
+   postprocessors =   MultiPostProcessor (
+   ),
+   virtualization =None,
+   metadata =   MetadataDict (
+   ) )
+
+ 
