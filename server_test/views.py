@@ -1,10 +1,9 @@
 
 from django.http import HttpResponse,JsonResponse
 from django.core.files.storage import default_storage
-import tarfile
 import datetime
 import os
-
+#import tarfile
 def server(request):
 	if request.method == "POST":
 		my_file = request.FILES['file']
